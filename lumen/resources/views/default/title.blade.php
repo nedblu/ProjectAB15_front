@@ -1,3 +1,3 @@
 <section class="title">
-	<h1>Bienvenidos</h1>
+	<h1>{!! $title !!}</h1>
 </section>

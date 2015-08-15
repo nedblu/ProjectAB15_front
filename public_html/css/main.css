@@ -171,7 +171,8 @@ nav ul{
 /*******SLIDER-START*******/
 #slider{
     border:5px inset #3D3D3D;
-    height: 400px;
+    height: auto;
+    width: 100%;
 }
 #pintura{
         height: 300px;
@@ -191,6 +192,9 @@ nav ul{
     color:#2E85D2;
 }
 .section-text h6{
+    text-align: center;
+}
+#signature{
     font-weight: bold;
     text-align: center;
 }

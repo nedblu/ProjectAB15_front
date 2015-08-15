@@ -21,7 +21,7 @@
                     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
-                <h6>Atentamente: AlphaBeta®</h6>    
+                <h6 id="signature">Atentamente: AlphaBeta®</h6>    
             </section>
             @include('default.footer')
             @endsection
