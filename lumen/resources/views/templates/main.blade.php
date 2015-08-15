@@ -13,6 +13,8 @@
         {!! Html::style('css/skeleton.css') !!}
         {!! Html::style('css/main.css') !!}
 
+        @yield('customStyles')
+
 
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>

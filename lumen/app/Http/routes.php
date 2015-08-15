@@ -20,10 +20,17 @@ $app->get('/acerca', ['as' => 'acerca', function () {
 
 /******************CATALOGO SECTION******************/
 $app->get('/catalogo', ['as' => 'catalogo', function () {
-	return view('catalogo', ['title' => 'Catálogo']);
+	return view('catalogo.catalogo', ['title' => 'Catálogo']);
 }]);
 
+$app->get('/catalogo/equipos', ['as' => 'equipos', function () {
+	$path = array("catálogo","equipos");
+	return view('catalogo.equipos', ['title' => 'Equipos', 'path' => $path]);
+}]);
 
+$app->get('/catalogo/consumibles', ['as' => 'consumibles', function () {
+	return view('catalogo.consumibles', ['title' => 'Consumibles', 'path' => 'Catálogo -> Consumibles']);
+}]);
 
 
 /******************TECNICAS SECTION******************/
