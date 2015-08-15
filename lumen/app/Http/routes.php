@@ -10,10 +10,13 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
+/******************BIENVENIDOS SECTION******************/
 $app->get('/', ['as' => 'home', function () {
 	return view('home', ['title' => 'Bienvenidos']);
 }]);
 
+/******************ACERCA SECTION******************/
 $app->get('/acerca', ['as' => 'acerca', function () {
 	return view('acerca', ['title' => 'Acerca']);
 }]);
@@ -32,17 +35,17 @@ $app->get('/catalogo/consumibles', ['as' => 'consumibles', function () {
 	return view('catalogo.consumibles', ['title' => 'Consumibles', 'path' => 'Catálogo -> Consumibles']);
 }]);
 
-
 /******************TECNICAS SECTION******************/
 $app->get('/tecnicas', ['as' => 'tecnicas', function () {
 	return view('tecnicas', ['title' => 'Técnicas']);
 }]);
 
-
+/******************SUCURSALES SECTION******************/
 $app->get('/sucursales', ['as' => 'sucursales', function () {
 	return view('sucursales', ['title' => 'Sucursales']);
 }]);
 
+/******************CONTACTO SECTION******************/
 $app->get('/contacto', ['as' => 'contacto', function () {
 	return view('contacto', ['title' => 'Contacto']);
 }]);

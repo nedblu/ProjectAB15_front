@@ -172,7 +172,7 @@ nav ul{
 #slider{
     border:5px inset #3D3D3D;
     height: auto;
-    width: 100%;
+    width: 99.1%;
 }
 #pintura{
         height: 300px;
@@ -204,6 +204,9 @@ nav ul{
 #section-footer{
     margin-top: 170px;
     margin-bottom: 20px;
+    margin-left: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
