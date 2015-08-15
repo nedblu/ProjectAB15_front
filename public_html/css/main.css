@@ -14,6 +14,7 @@ html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
+    background: -webkit-linear-gradient(top, rgba(203,210,214,1) 0%,rgba(255,255,255,1) 100%)
 }
 
 /*
@@ -38,7 +39,7 @@ html {
  * A better looking default horizontal rule
  */
 
-hr {
+/*hr {
     display: block;
     height: 1px;
     border: 0;
@@ -46,7 +47,7 @@ hr {
     margin: 1em 0;
     padding: 0;
 }
-
+*/
 /*
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:
@@ -92,9 +93,125 @@ textarea {
 }
 
 /* ==========================================================================
-   Author's custom styles
+   Author's custom styles ALPHABETA
    ========================================================================== */
 
+/*******HEADER-START*******/
+header{
+    /*border: 0px solid transparent;*/
+    width: 100%;
+    height: 240px;
+    background: #59A1DA url(../img/ABheader.png) 0% 0 no-repeat fixed;
+}
+nav{
+    /*border: 1px solid red;*/
+    height: 130px;
+    padding-top: 100px;
+}
+nav ul{
+    /*border: 1px solid green;*/
+    height: 130px;
+}
+#logo{
+    /*border: 1px solid black;*/
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    list-style: none;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.5);
+    text-align: center;
+    width: 130px;
+    height: 135px;
+}
+#logo img{
+    margin-top: 21px;
+    width: 95px;
+    height: 92px;
+}
+#special-menu{
+    margin-left: 400px;
+}
+.menu-link{
+    /*border: 1px solid black;*/
+    text-align: center;
+    width: 110px;
+    height: 90px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 25px;
+    margin-top: 20px;
+}
+.menu-image{
+    width: 90px;
+    height: 90px;
+}
+.menu-item-special{
+    width: 110px;
+    height: 90px;
+}
+/*******HEADER-END*******/
+
+/*******TITLE-START*******/
+.title{
+    /*border:1px solid black;*/
+    height: 200px;
+    width: 100%;
+}
+.title h1{
+    /*border:1px solid red;*/
+    margin: 0 auto;
+    max-width:800px;
+    text-align: center;
+    margin-top:50px;
+    text-shadow: 4px 4px 20px #3F3F3F;
+}
+/*******TITLE-END*******/
+
+/*******SLIDER-START*******/
+#slider{
+    border:5px inset #3D3D3D;
+    height: 400px;
+}
+#pintura{
+        height: 300px;
+        background: url(../img/ABpintura.png) repeat-x;
+        margin-top: -16px;
+}
+/*******SLIDER-END*******/
+
+/*******TEXT-START*******/
+.section-text{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 70px;
+}
+.section-text h3{
+    font-weight: bold;
+    color:#2E85D2;
+}
+.section-text h6{
+    font-weight: bold;
+    text-align: center;
+}
+/*******TEXT-END*******/
+
+/*******RIGHTS-START*******/
+#section-footer{
+    margin-top: 170px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#section-footer span, a{
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 15px;
+}
+
+/*******RIGHTS-END*******/
 
 
 

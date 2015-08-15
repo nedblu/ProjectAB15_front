@@ -1,3 +1,8 @@
 # Include your project-specific ignores in this file
 # Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+<<<<<<< HEAD
 .DS_Store
+=======
+.DS_Store
+
+>>>>>>> 3a1ab300c5f1c67a3c487744176ee14c4b27b961

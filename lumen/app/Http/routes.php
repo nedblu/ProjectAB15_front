@@ -11,6 +11,7 @@
 |
 */
 $app->get('/', function () {
-    return 'Hello World';
+    return view('home');
 });
+
 
