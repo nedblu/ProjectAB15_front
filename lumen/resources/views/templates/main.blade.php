@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {!! Html::style('//fonts.googleapis.com/css?family=Raleway:400,300,600') !!}
         {!! Html::favicon('img/ABfavicon.png') !!}
-        {!! Html::style('css/normalize.min.css') !!}
+        {!! Html::style('css/normalize.css') !!}
         {!! Html::style('css/skeleton.css') !!}
         {!! Html::style('css/main.css') !!}
 
