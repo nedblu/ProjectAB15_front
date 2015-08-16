@@ -109,11 +109,9 @@ nav{
     padding-top: 100px;
 }
 nav ul{
-    /*border: 1px solid green;*/
     height: 130px;
 }
 #logo{
-    /*border: 1px solid black;*/
     position: fixed;
     top: 20px;
     left: 20px;
@@ -121,7 +119,7 @@ nav ul{
     border-radius: 100px;
     background: rgba(255,255,255,0.5);
     text-align: center;
-    width: 130px;
+    width: 135px;
     height: 135px;
 }
 #logo img{
@@ -133,7 +131,6 @@ nav ul{
     margin-left: 400px;
 }
 .menu-link{
-    /*border: 1px solid black;*/
     text-align: center;
     width: 110px;
     height: 90px;
@@ -159,7 +156,6 @@ nav ul{
     width: 100%;
 }
 .title h1{
-    /*border:1px solid red;*/
     margin: 0 auto;
     max-width:800px;
     text-align: center;
