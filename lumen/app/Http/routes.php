@@ -52,11 +52,11 @@ $app->get('/contacto', ['as' => 'contacto', function () {
 
 // $app->post('/enviar', ['as' => 'enviar', 'uses' => 'MailController@getFrom']);
 
-$app->post('/enviar', ['as' => 'enviar', function () {
-	return view('catalogo.catalogo', ['title' => 'Catálogo']);
-}]);
+// $app->post('/enviar', ['as' => 'enviar', function () {
+// 	return view('home', ['title' => 'Catálogo-POPO']);
+// }]);
 
-//$app->post('/enviar', 'UserController@showProfile');
+$app->post('/enviar',['uses' => 'MailController@getForm', 'as' => 'enviar']);
 
 
 
