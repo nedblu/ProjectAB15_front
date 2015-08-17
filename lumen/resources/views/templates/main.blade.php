@@ -8,15 +8,16 @@
         <meta name="author" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {!! Html::style('//fonts.googleapis.com/css?family=Raleway:400,300,600') !!}
+        {!! Html::style('//fonts.googleapis.com/css?family=Muli:400,300italic,300,400italic') !!}
         {!! Html::favicon('img/ABfavicon.png') !!}
         {!! Html::style('css/normalize.css') !!}
         {!! Html::style('css/skeleton.css') !!}
         {!! Html::style('css/main.css') !!}
 
         @yield('customStyles')
-
-
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        {!! Html::script('js/vendor/jquery-1.11.3.min.js') !!}
+        {!! Html::script('js/vendor/modernizr-2.8.3.min.js'); !!}
+        
     </head>
     <body>
         <!--[if lt IE 8]>

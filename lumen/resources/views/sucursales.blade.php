@@ -1,8 +1,8 @@
 @extends('templates.main')
-		@section('customStyles')
-			{!! Html::style('css/sucursales.css') !!}
-		@endsection
-        @section('content')
+	@section('customStyles')
+		{!! Html::style('css/sucursales.css') !!}
+	@endsection
+      @section('content')
             @include('default.header')
             @include('default.title')
             @include('default.slider')
@@ -24,7 +24,7 @@
             	</div>
             </section>
             @include('default.footer')
-            @endsection
+      @endsection
 
             {{-- Oficina central:
             Av. Arcos #791, Col. Jardines del bosque, Guadalajara, Jal., México; C.P. 44520 .Tel. (33) 364 745 30

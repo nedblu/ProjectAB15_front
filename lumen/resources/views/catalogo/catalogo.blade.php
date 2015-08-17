@@ -13,5 +13,5 @@
                 	<div class="catItem"><a href="{!! route('consumibles') !!}"><img src="img/ABnoDisponible.png"> <span>Consumibles</span></a></div>
                 </section>
                 @include('default.footer')
-                @endsection
+        @endsection
 

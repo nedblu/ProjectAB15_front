@@ -50,10 +50,8 @@ $app->get('/contacto', ['as' => 'contacto', function () {
 	return view('contacto', ['title' => 'Contacto']);
 }]);
 
-// $app->post('/enviar', ['as' => 'enviar', 'uses' => 'MailController@getFrom']);
-
-// $app->post('/enviar', ['as' => 'enviar', function () {
-// 	return view('home', ['title' => 'Catálogo-POPO']);
+// $app->get('/contato/{$ESMessage}', ['as' => 'contactoESM', function () {
+// 	return view('contacto', ['title' => 'Contacto', 'ESMessage' => '{$ESMessage}']);
 // }]);
 
 $app->post('/enviar',['uses' => 'MailController@getForm', 'as' => 'enviar']);
