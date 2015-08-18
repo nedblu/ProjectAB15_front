@@ -257,7 +257,7 @@ textarea:focus,
 select:focus {
   border: 1px solid #33C3F0;
   outline: 0; }
-label,
+/*label,*/
 legend {
   display: block;
   margin-bottom: .5rem;
@@ -329,11 +329,11 @@ td:last-child {
 button,
 .button {
   margin-bottom: 1rem; }
-input,
+/*input,
 textarea,
 select,
 fieldset {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem; }*/
 pre,
 blockquote,
 dl,

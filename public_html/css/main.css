@@ -195,6 +195,18 @@ nav ul{
     font-weight: bold;
     text-align: center;
 }
+
+#aviso ul{
+    list-style-type: square;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.email{
+    color: #2E85D2;
+}
 /*******TEXT-END*******/
 
 /*******RIGHTS-START*******/
@@ -214,7 +226,14 @@ nav ul{
     vertical-align: bottom;
     margin-right: 15px;
 }
+.linkF{
+    text-decoration: none;
+    color: #2E85D2;
+}
 
+.linkF:hover{
+    color: #e74c3c;
+}
 /*******RIGHTS-END*******/
 
 

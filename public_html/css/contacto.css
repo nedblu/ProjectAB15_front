@@ -1,15 +1,107 @@
 #formulario{
-	wid
-}
-form{
-	border:1px solid blue;
 	width: 100%;
 	height: auto;
 	font-family: 'Muli', sans-serif;
+	text-align: left;
+}
 
+a{
+	text-decoration: none;
+	text-transform: collapse;
 }
 
 h3{
 	font-weight: bold;
     color:#2E85D2;
+}
+
+form{
+	width: 70%;
+	margin: 0 auto;
+}
+
+form div{
+	display: inline-block;
+	vertical-align: top;
+}
+
+#left{
+	width: 60%;
+}
+
+#left p{
+	font-size: 13px;
+	text-align: justify;
+	width: 90%;
+}
+
+#left p span{
+	font-weight: bold;
+	color:#2E85D2;
+}
+
+#left p span:hover{
+	color:#e74c3c;
+}
+
+input[type="text"], input[type="tel"]{
+	width: 90%;
+	border: 2px solid #2E85D2;
+	margin-bottom: 20px;
+	box-shadow: inset 0 0 10px rgba(0, 0, 0, .1);
+}
+
+textarea{
+	width: 100%;
+	height: 200px;
+	border: 2px solid #2E85D2;
+	resize: none;
+	box-shadow: inset 0 0 10px rgba(0, 0, 0, .1);
+}
+
+input[type="text"]:focus, input[type="tel"]:focus, textarea:focus{
+	border: 2px solid #e74c3c;
+}
+
+.star{
+	font-weight: bold;
+	color:#e74c3c;
+}
+
+.link{
+	font-weight: bold;
+}
+
+.link:hover{
+	color: #e74c3c;
+}
+
+#right{
+	border:3px solid #2E85D2;
+	background: #ffffff;
+	border-radius: 15px;
+	padding: 10px;
+	width: 35%;
+	box-shadow: inset 0 0 10px rgba(0, 0, 0, .1);
+	text-align: center;
+}
+
+#right p{
+	font-size: 13px;
+	text-align: justify;
+	width: 90%;
+	margin:0 auto;
+	margin-top: 10px;
+}
+
+input[type="submit"]{
+	border:1px solid #2E85D2;
+	color: #ffffff;
+	background: #86BBEB;
+}
+
+input[type="submit"]:hover{
+	border:2px solid #e74c3c;
+	color: #ffffff;
+	background: #EB6F63;
 }

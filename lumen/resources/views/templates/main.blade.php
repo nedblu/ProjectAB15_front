@@ -17,6 +17,7 @@
         @yield('customStyles')
         {!! Html::script('js/vendor/jquery-1.11.3.min.js') !!}
         {!! Html::script('js/vendor/modernizr-2.8.3.min.js'); !!}
+        @yield('customScript')
         
     </head>
     <body>

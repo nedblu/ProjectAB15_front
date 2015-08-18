@@ -56,6 +56,10 @@ $app->get('/contacto', ['as' => 'contacto', function () {
 
 $app->post('/enviar',['uses' => 'MailController@getForm', 'as' => 'enviar']);
 
+$app->get('/aviso', ['as' => 'aviso', function () {
+	return view('aviso', ['title' => 'Aviso de Privacidad']);
+}]);
+
 
 
 

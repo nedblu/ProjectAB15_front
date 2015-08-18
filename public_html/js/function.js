@@ -22,7 +22,7 @@ $(document).ready(function () {
         }
     });
 
-    $(".nombre").keyup(function(){
+    $("#nombre").keyup(function(){
         if( $(this).val() != "" || !isNaN($(this).val()) ){
             $(".error").fadeOut();
             return false;
