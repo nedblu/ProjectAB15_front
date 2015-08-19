@@ -6,7 +6,7 @@
         @section('content')
                 @include('default.header')
                 @include('default.title')
-               {{--  @include('default.slider') --}}
+                @include('default.slider')
                 <section id="catalogo">
                     <h3>{!! $title !!}</h3>   
                     @if ($title == 'Planchas'|| $title == 'Tintas' || $title == 'Papeles')

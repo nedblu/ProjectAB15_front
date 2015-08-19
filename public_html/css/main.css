@@ -147,8 +147,8 @@ textarea {
 
 .logo-float{
     position: fixed;
-    top: 50px;
-    left: 150px;
+    top: 40px;
+    left: 20px;
     list-style: none;
     border-radius: 100px;
     background: rgba(255,255,255,.4);
