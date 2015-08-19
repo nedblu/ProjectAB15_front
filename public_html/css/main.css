@@ -13,11 +13,16 @@
 html {
     color: #222;
     font-size: 1em;
-    line-height: 1.4;
     font-family: 'Muli', sans-serif;
-    background: -webkit-linear-gradient(top, rgba(203,210,214,1) 0%,rgba(255,255,255,1) 100%)
+    /*background: -webkit-linear-gradient(top, rgba(203,210,214,1) 0%,rgba(255,255,255,1) 100%);*/
+    background-color: #F3F3F3;
+    padding: 0;
+    margin:0;
 }
-
+nav{
+    margin:0;
+    padding:0;
+}
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -93,88 +98,93 @@ textarea {
     padding: 0.2em 0;
 }
 
-/* ==========================================================================
-   Author's custom styles ALPHABETA
-   ========================================================================== */
-
-/*******HEADER-START*******/
-header{
-    /*border: 0px solid transparent;*/
+#bg-header{
+    background-image: url(../img/header-bg.png);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center; 
+    height: 255px;
+}
+#menu{
+    margin-top:70px;
+}
+#menu ul{
+    text-align: right;
+    padding-top:100px;
+}
+#menu ul li {
+    display: inline-block;
+    vertical-align: top;
+}
+#menu ul li i, #menu ul li a{
+    margin:0;
+    padding:0;
+}
+#menu ul li a{
+    text-align:center;
+    text-decoration: none;
+    color:#ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 10px;
+    width: 110px;
+    display: block;
+    transition: 0.2s all;
+}
+#menu ul li a:hover{
+    background-color: rgba(60,188,231,.8);
+    border-radius: 6px;
+    font-size: 1.1em;
+    text-shadow: 0px 0px 7px rgba(0,0,0,.5);
+}
+#menu ul li a i{
+    display: block;
+    font-size: 1.8em;
+    margin-bottom: 8px;
     width: 100%;
-    height: 240px;
-    background: #59A1DA url(../img/ABheader.png) 0% 0 no-repeat fixed;
 }
-nav{
-    /*border: 1px solid red;*/
-    height: 130px;
-    padding-top: 100px;
-}
-nav ul{
-    height: 130px;
-}
-#logo{
+
+.logo-float{
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 50px;
+    left: 150px;
     list-style: none;
     border-radius: 100px;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,.4);
     text-align: center;
-    width: 135px;
-    height: 135px;
+    width: 173px;
+    height: 170px;
 }
-#logo img{
-    margin-top: 21px;
-    width: 95px;
-    height: 92px;
-}
-#special-menu{
-    margin-left: 400px;
-}
-.menu-link{
-    text-align: center;
-    width: 110px;
-    height: 90px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 25px;
-    margin-top: 20px;
-}
-.menu-image{
-    width: 90px;
-    height: 90px;
-}
-.menu-item-special{
-    width: 110px;
-    height: 90px;
-}
-/*******HEADER-END*******/
-
-/*******TITLE-START*******/
-.title{
-    /*border:1px solid black;*/
-    height: 200px;
-    width: 100%;
-}
-.title h1{
-    margin: 0 auto;
-    max-width:800px;
-    text-align: center;
-    margin-top:50px;
-    text-shadow: 4px 4px 20px #3F3F3F;
-}
-/*******TITLE-END*******/
-
-/*******SLIDER-START*******/
-#slider{
-    border:5px inset #3D3D3D;
+.logo-float img {
+    width: 120px;
     height: auto;
-    width: 99.1%;
+    margin-top: 23px;
+}
+.title{
+    /*background-color: #1266AE;*/
+    background-color: #ED1919;
+}
+.title div h1{
+    text-align: center;
+    font-size: 3.5em;
+    text-transform: lowercase;
+    margin:0;
+    padding:0;
+    color: #ffffff;
+    text-shadow: 2px 2px 1px #C41212;
+}
+
+#slider{
+    background: url(../img/slide-images/slide.gif);
+    height: 400px;
+    width: 100%;
+    border-bottom:5px solid #1789B9;
 }
 #pintura{
         height: 300px;
-        background: url(../img/ABpintura.png) repeat-x;
-        margin-top: -16px;
+        background: url(../img/bannersplash.gif) repeat-x;
+        margin-top: 0px;
 }
 /*******SLIDER-END*******/
 
@@ -182,18 +192,26 @@ nav ul{
 .section-text{
     width: 70%;
     margin: 0 auto;
-    margin-top: 70px;
+    margin-top: 30px;
+    color: #3D3D3D;
+    font-size: 1.5em;
+    font-family: 'Muli', sans-serif;
 }
 .section-text h3{
     font-weight: bold;
+    font-size: 4em;
     color:#2E85D2;
+    font-family: 'Raleway', sans-serif;
 }
 .section-text h6{
     text-align: center;
 }
 #signature{
-    font-weight: bold;
+    font-weight: normal;
+    margin-top: 100px;
     text-align: center;
+    font-family: 'Allura', cursive;
+    font-size: 1.8em;
 }
 
 #aviso ul{

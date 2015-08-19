@@ -1,13 +1,17 @@
-<header>
-	<nav>
+<div id="bg-header" class="container-fluid">
+    <div class="logo-float pull-left">
+        {!! Html::image('img/ABlogo.png') !!}
+    </div>
+    <nav id="menu" class="container">
         <ul>
-            <li id="logo"><img src="img/ABlogo.png"></li>
-            <li id="special-menu" class="menu-link"><a href="{!! route('home') !!}"><img src="img/ABinicio.png" class="menu-image"></a></li>
-            <li class="menu-link"><a href="{!! route('acerca') !!}"><img src="img/ABacerca.png" class="menu-image"></a></li>
-            <li class="menu-link"><a href="{!! route('catalogo') !!}"><img src="img/ABcatalogo.png"class="menu-image"></a></li>
-            <li class="menu-link"><a href="{!! route('tecnicas') !!}"><img src="img/ABtecnicas.png" class="menu-item-special"></a></li>
-            <li class="menu-link"><a href="{!! route('sucursales') !!}"><img src="img/ABsucursales.png" class="menu-item-special"></a></li>
-            <li class="menu-link"><a href="{!! route('contacto') !!}"><img src="img/ABcontacto.png" class="menu-item-special"></a></li>
+            <li><a href="{!! route('home') !!}" title="Inicio"><i class="fa fa-home"></i> Inicio</a></li>
+            <li><a href="{!! route('acerca') !!}" title="Acerca"><i class="fa fa-user"></i> Acerca</a></li>
+            <li><a href="{!! route('catalogo') !!}" title="Catálogo"><i class="fa fa-th"></i> Catálogo</a></li>
+            <li><a href="{!! route('tecnicas') !!}" title="Técnicas"><i class="fa fa-magic"></i> Técnicas</a></li>
+            <li><a href="{!! route('sucursales') !!}" title="Sucursales"><i class="fa fa-building"></i> Sucursales</a></li>
+            <li><a href="{!! route('contacto') !!}" title="Contacto"><i class="fa fa-paper-plane-o"></i> Contacto</a></li>    
         </ul>
     </nav>
-</header>
+</div>
+
+

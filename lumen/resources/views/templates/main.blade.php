@@ -7,11 +7,12 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        {!! Html::style('//fonts.googleapis.com/css?family=Raleway:400,300,600') !!}
+        {!! Html::style('//fonts.googleapis.com/css?family=Raleway:400,300,600|Allura') !!}
         {!! Html::style('//fonts.googleapis.com/css?family=Muli:400,300italic,300,400italic') !!}
         {!! Html::favicon('img/ABfavicon.png') !!}
         {!! Html::style('css/normalize.css') !!}
         {!! Html::style('css/skeleton.css') !!}
+        {!! Html::style('css/font-awesome.css') !!}
         {!! Html::style('css/main.css') !!}
 
         @yield('customStyles')
@@ -24,8 +25,6 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-        <!-- Add your site or application content here -->
         @yield('content')
 
     </body>
