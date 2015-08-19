@@ -4,7 +4,7 @@
             @include('default.title')
             @include('default.slider')
             <section class="section-text">
-                <h3>Acerca</h3>
+                <h3>{!! $title !!}</h3>
 
                 <h5>Misión</h5>
                 <p>

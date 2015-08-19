@@ -7,7 +7,7 @@
             @include('default.title')
             @include('default.slider')
             <section id="sucursales">
-            	<h3>Sucursales</h3>
+            	<h3>{!! $title !!}</h3>
             	<div class="sucursal">
             		<h5>Oficina Central</h5>
             		<a href="https://www.google.com.mx/maps/place/Los+Arcos+791,+Jardines+del+Bosque,+44520+Guadalajara,+Jal./@20.6645959,-103.3854246,15.74z/data=!4m2!3m1!1s0x8428ae750ec10b7d:0xb8d7a903ad08460a" target="_blank">{!! Html::image('img/ABoficinaCentral.png') !!} <span>Av. Arcos #791, Col. Jardines del bosque, Guadalajara, Jal., México; C.P. 44520 .Tel. (33) 364 745 30.</span></a>

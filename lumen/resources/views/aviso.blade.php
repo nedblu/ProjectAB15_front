@@ -6,7 +6,7 @@
             @include('default.header')
             @include('default.title')
             <section id="aviso" class="section-text">
-	            <h3>Aviso de Privacidad</h3>
+	            <h3>{!! $title !!}</h3>
 	            <p>
 		            En atención a la Ley Federal de Protección de Datos Personales en Posesión de Particulares, la empresa AV. ARCOS #791 COL. JARDIN ES DEL BOSQUE, C.P. 44520, GUADALAJARA, JALISCO, MÉXICO, hacemos de su conocimiento lo siguiente (le solicitamos leer detenidamente):
 		            <br/>

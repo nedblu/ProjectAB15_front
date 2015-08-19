@@ -12,7 +12,7 @@
             <section id="formulario">
 	            
 				<form method="POST" action="{!! route('enviar') !!}" accept-charset="UTF-8">
-					<h3>Contacto</h3>				
+					<h3>{!! $title !!}</h3>				
 					<div id="left">
 						<p>
 	                        En <span>AlphaBeta®</span> lo más importante es saber tu opinión, por eso abrimos el espacio para que puedas enviarnos tus sugerencias, inquietudes, preguntas y cualquier otra cosa respecto a nuestra empresa.

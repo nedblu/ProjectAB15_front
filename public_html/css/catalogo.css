@@ -1,6 +1,7 @@
 #catalogo{
-	width: 100%;
+	width: 90%;
 	height: auto;
+	margin: 0 auto;
 	text-align: center;
 }
 
@@ -45,6 +46,84 @@
 }
 
 .catItem:hover > a span{
+	color:#e74c3c;
+}
+
+.catItemSec{
+	border:4px solid #3498db;
+	display: inline-block;
+	vertical-align: middle;
+	width: 36%;
+	height: auto;
+	margin: 20px;
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+
+.catItemSec a{
+	color:#3498db;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 100%;
+	height: 100%;
+}
+
+.catItemSec a img{
+	width: 150px;
+	height: 150px;
+	border:2px solid #3498db;
+	border-radius: 10px;
+}
+
+.catItemSec:hover {
+	border:4px solid #e74c3c;
+	box-shadow: 4px 4px 4px #888888;
+}
+
+.catItemSec:hover > a img{
+	border:2px solid #e74c3c;
+}
+
+.catItemSec:hover > a span{
+	color:#e74c3c;
+}
+
+.catItemItem{
+	border:4px solid #3498db;
+	display: inline-block;
+	vertical-align: middle;
+	width: 40%;
+	height: auto;
+	margin: 20px;
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+
+.catItemItem a{
+	color:#3498db;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 100%;
+	height: 100%;
+}
+
+.catItemItem a img{
+	width: 150px;
+	height: 150px;
+	border:2px solid #3498db;
+	border-radius: 10px;
+}
+
+.catItemItem:hover {
+	border:4px solid #e74c3c;
+	box-shadow: 4px 4px 4px #888888;
+}
+
+.catItemItem:hover > a img{
+	border:2px solid #e74c3c;
+}
+
+.catItemItem:hover > a p{
 	color:#e74c3c;
 }
 

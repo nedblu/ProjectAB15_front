@@ -26,14 +26,59 @@ $app->get('/catalogo', ['as' => 'catalogo', function () {
 	return view('catalogo.catalogo', ['title' => 'Catálogo']);
 }]);
 
+	/****************EQUIPOS****************/
 $app->get('/catalogo/equipos', ['as' => 'equipos', function () {
+	$json = file_get_contents('cat.json');
+	$data = json_decode($json);
 	$path = array("catálogo","equipos");
-	return view('catalogo.equipos', ['title' => 'Equipos', 'path' => $path]);
+	return view('catalogo.equipos', ['title' => 'Equipos', 'path' => $path, 'data' => $data->EQUIPOS]);
 }]);
 
-$app->get('/catalogo/consumibles', ['as' => 'consumibles', function () {
-	return view('catalogo.consumibles', ['title' => 'Consumibles', 'path' => 'Catálogo -> Consumibles']);
+$app->get('/catalogo/equipos/impresoras', ['as' => 'impresoras', function () {
+	$json = file_get_contents('cat.json');
+	$data = json_decode($json);
+	return view('catalogo.item', ['title' => 'Impresoras', 'data' => $data->EQUIPOS->IMPRESORAS]);
 }]);
+
+$app->get('/catalogo/equipos/planchas', ['as' => 'planchas', function () {
+	$json = file_get_contents('cat.json');
+	$data = json_decode($json);
+	return view('catalogo.item', ['title' => 'Planchas', 'data' => $data->EQUIPOS->PLANCHAS]);
+}]);
+
+$app->get('/catalogo/equipos/vynil', ['as' => 'vynil', function () {
+	$json = file_get_contents('cat.json');
+	$data = json_decode($json);
+	return view('catalogo.item', ['title' => 'Vynil', 'data' => $data->EQUIPOS->VYNIL]);
+}]);
+
+	/****************CONSUMIBLES****************/
+$app->get('/catalogo/consumibles', ['as' => 'consumibles', function () {
+	$json = file_get_contents('cat.json');
+	$data = json_decode($json);
+	$path = array("catálogo","equipos");
+	return view('catalogo.consumibles', ['title' => 'Consumibles', 'path' => $path, 'data' => $data->CONSUMIBLES]);
+}]);
+
+$app->get('/catalogo/consumibles/tintas', ['as' => 'tintas', function () {
+	$json = file_get_contents('cat.json');
+	$data = json_decode($json);
+	return view('catalogo.item', ['title' => 'Tintas', 'data' => $data->CONSUMIBLES->TINTAS]);
+}]);
+
+$app->get('/catalogo/consumibles/papeles', ['as' => 'papeles', function () {
+	$json = file_get_contents('cat.json');
+	$data = json_decode($json);
+	return view('catalogo.item', ['title' => 'Papeles', 'data' => $data->CONSUMIBLES->PAPELES]);
+}]);
+
+$app->get('/catalogo/consumibles/rollos', ['as' => 'rollos', function () {
+	$json = file_get_contents('cat.json');
+	$data = json_decode($json);
+	return view('catalogo.item', ['title' => 'Rollos', 'data' => $data->CONSUMIBLES->ROLLOS]);
+}]);
+
+
 
 /******************TECNICAS SECTION******************/
 $app->get('/tecnicas', ['as' => 'tecnicas', function () {
