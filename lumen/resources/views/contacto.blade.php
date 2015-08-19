@@ -23,7 +23,6 @@
 
                     	<label for="apellido">Apellidos<span class="star">*</span></label> 
                     	<input class="apellido text" placeholder="Apellidos" type="text" name="apellido" id="apellido" >                            
-
                     	<label for="telefono">Tel&eacute;fono [10 d&iacute;gitos]</label> 
                     	<input class="telefono text" placeholder="0123456789" maxlength="10" type="tel" name="telefono" id="telefono">                            
                    
