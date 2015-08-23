@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>AlphaBeta ®|{!! $title !!}</title>
+        <title>AlphaBeta | {!! $title !!}</title>
         <meta name="description" content="">
         <meta name="author" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +14,7 @@
         {!! Html::style('css/skeleton.css') !!}
         {!! Html::style('css/font-awesome.css') !!}
         {!! Html::style('css/main.css') !!}
+        {!! Html::style('css/buttons.css') !!}
 
         @yield('customStyles')
         {!! Html::script('js/vendor/jquery-1.11.3.min.js') !!}

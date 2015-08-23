@@ -1,58 +1,22 @@
-#sucursales{
-	width: 100%;
-	height: auto;
-	text-align: center;
-}
 #sucursales h3{
     font-weight: bold;
     color:#2E85D2;
-    margin-bottom: 90px;
+    margin-bottom: 50px;
+}
+#sucursales article {
+	padding-top: 30px;
+	border-top: 1px solid #BCBCBC;
+	margin-bottom: 30px;
+}
+#sucursales article h5 {
+	font-size: 1.5em;
+	color: #0775bd;
+	margin: 0 0 15px 0;
+	font-weight: bold;
+}
+#sucursales article p {
+	font-size: 0.8em;
+	line-height: 1.8em;
 }
 
-.sucursal{
-	border:5px solid #3498db;
-	width: 65%;
-	margin: 0 auto;
-	padding-bottom: 30px;
-	margin-bottom: 50px;
-}
 
-.sucursal h5{
-	margin-top: 25px;
-}
-
-.sucursal a{
-	color:#3498db;
-	vertical-align: middle;
-	text-decoration: none;
-	width: 90%;
-	height: 100%;
-}
-
-.sucursal a img{
-	width: 200px;
-	height: 200px;
-	border:3px solid #3498db;
-	border-radius: 10px;
-	vertical-align: middle;
-	display: inline-block;
-}
-
-.sucursal a span{
-	width: 40%;
-	vertical-align: middle;
-	display: inline-block;
-}
-
-.sucursal:hover{
-	border:6px solid #e74c3c;
-	box-shadow: 6px 6px 6px #888888;
-}
-
-.sucursal:hover > a img{
-	border:3px solid #e74c3c;
-}
-
-.sucursal:hover > a span{
-	color: #e74c3c;
-}

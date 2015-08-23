@@ -99,18 +99,17 @@ textarea {
 }
 
 #bg-header{
-    background-image: url(../img/header-bg.png);
+    background-image: url(../img/header.png);
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center; 
-    height: 255px;
+    background-color: #0775bd;
+    height: 175px;
 }
-#menu{
-    margin-top:70px;
-}
+
 #menu ul{
     text-align: right;
-    padding-top:100px;
+    padding-top:70px;
 }
 #menu ul li {
     display: inline-block;
@@ -147,8 +146,8 @@ textarea {
 
 .logo-float{
     position: fixed;
-    top: 40px;
-    left: 20px;
+    top: 18px;
+    left: 40px;
     list-style: none;
     border-radius: 100px;
     background: rgba(255,255,255,.4);
@@ -167,7 +166,7 @@ textarea {
 }
 .title div h1{
     text-align: center;
-    font-size: 3.5em;
+    font-size: 2.5em;
     text-transform: lowercase;
     margin:0;
     padding:0;
@@ -176,35 +175,37 @@ textarea {
 }
 
 #slider{
-    background: url(../img/slide-images/slide.gif);
+    background: url(../img/slide-images/slide.gif) center no-repeat;
+    background-color: #0775bd;
     height: 400px;
     width: 100%;
+    border-top:5px solid #1789B9;
     border-bottom:5px solid #1789B9;
 }
 #pintura{
-        height: 300px;
-        background: url(../img/bannersplash.gif) repeat-x;
-        margin-top: 0px;
+    height: 200px;
+    background: url(../img/bannersplash.png) center no-repeat;
+    margin-top: 0px;
 }
 /*******SLIDER-END*******/
 
 /*******TEXT-START*******/
-.section-text{
-    width: 70%;
-    margin: 0 auto;
-    margin-top: 30px;
-    color: #3D3D3D;
-    font-size: 1.5em;
-    font-family: 'Muli', sans-serif;
-}
 .section-text h3{
     font-weight: bold;
     font-size: 4em;
     color:#2E85D2;
     font-family: 'Raleway', sans-serif;
 }
+.section-text article p{
+    line-height: 1.5em;
+    font-size: 1.2em;
+    color:#3D3D3D;
+    margin-bottom: 15px;
+    font-family: 'Muli', sans-serif;
+}
 .section-text h6{
     text-align: center;
+    font-weight: bold;
 }
 #signature{
     font-weight: normal;
@@ -212,6 +213,15 @@ textarea {
     text-align: center;
     font-family: 'Allura', cursive;
     font-size: 1.8em;
+}
+article#values div p{
+	text-align: center;
+	font-size: .988em;
+}
+article#values div[data-type]{
+	text-align: center;
+	font-size: 5em;
+	color: #0775bd;
 }
 
 #aviso ul{
