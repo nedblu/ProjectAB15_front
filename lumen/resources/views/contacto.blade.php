@@ -9,37 +9,53 @@
             @include('default.header')
             @include('default.title')
             @include('default.slider')
-            <section id="formulario">
-	            
-				<form method="POST" action="{!! route('enviar') !!}" accept-charset="UTF-8">
-					<h3>{!! $title !!}</h3>				
-					<div id="left">
-						<p>
-	                        En <span>AlphaBeta®</span> lo más importante es saber tu opinión, por eso abrimos el espacio para que puedas enviarnos tus sugerencias, inquietudes, preguntas y cualquier otra cosa respecto a nuestra empresa.
-	                    </p>
-	            
-                    	<label for="nombre">Nombre(s)<span class="star">*</span></label>
-                    	<input class="nombre text" placeholder="Nombre(s)" type="text" name="nombre" id="nombre" > 
+            <section class="container">
+            	<h3>{!! $title !!}</h3>	
+            	<article class="twelve columns section">
+            		<p>
+                        En <span>AlphaBeta®</span> lo más importante es saber tu opinión, por eso abrimos el espacio para que puedas enviarnos tus sugerencias, inquietudes, preguntas y cualquier otra cosa respecto a nuestra empresa.
+                    </p>
+            		<form method="POST" action="{!! route('enviar') !!}" accept-charset="UTF-8" class="form">
 
-                    	<label for="apellido">Apellidos<span class="star">*</span></label> 
-                    	<input class="apellido text" placeholder="Apellidos" type="text" name="apellido" id="apellido" >                            
-                    	<label for="telefono">Tel&eacute;fono [10 d&iacute;gitos]</label> 
-                    	<input class="telefono text" placeholder="0123456789" maxlength="10" type="tel" name="telefono" id="telefono">                            
-                   
-                    	<label for="correo">Correo<span class="star">*</span></label> 
-                    	<input class="correo text" placeholder="Correo Electr&oacute;nico" type="text" name="correo" id="correo" >                            
-                   
-                        <label>Mensaje<span class="star">*</span> <span id="info">(500)</span></label> 
-                        <textarea name="mensaje" class="mensaje" id="mensaje" maxlength="500" onkeyup="actualizaInfo(500, mensaje)"></textarea>
-					</div>
-					<div id="right">
-						<input type="checkbox" name="terminos" required><span> He leído el</span> <a class="link" href="{!! route('aviso') !!}" title="Aviso de Privacidad">Aviso de Privacidad</a>
-	                	<input class="" type="submit" value="ENVIAR MENSAJE">                            
-	                	<p>
-		                	Todos los campos que tengan un asterisco (<span class="star">*</span>) son obligatorios, y el mensaje no se enviará hasta que no sean completados.
-		                </p>
-	                </div>
-	            </form>
+            			<div class="six columns">
+            				<div class="row group-form" >
+	            				<label for="nombre">Nombre(s)</label>
+	            				<input type="text" placeholder="Nombre(s)" name="nombre" required>	
+            				</div>
+            				<div class="row group-form">
+	            				<label for="telefono">Teléfono [10 dígitos]</label>
+	            				<input type="text" placeholder="0123456789" name="telefono" required>	
+            				</div>
+            			</div>
+
+            			<div class="six columns">
+            				<div class="row group-form">
+	            				<label for="apellido">Apellidos</label>
+	            				<input type="text" placeholder="Apellidos" name="apellido" required>	
+            				</div>
+            				<div class="row group-form">
+	            				<label for="correo">Correo</label>
+	            				<input type="email" placeholder="correo@dominio.com" name="correo" required>	
+            				</div>
+            			</div>
+            			<div class="twelve columns">
+            				<div class="row group-form">
+	            				<label for="mensaje">Mensaje <span id="info">(500)</span></label>
+            					<textarea name="mensaje" maxlength="500" onkeyup="actualizaInfo(500, mensaje)" id="mensaje" required></textarea>	
+            				</div>
+            				<div class="row confirmation">
+	            				<input type="checkbox" name="terminos" required><span> He leído el</span> <a class="link" href="{!! route('aviso') !!}" title="Aviso de Privacidad">aviso de privacidad</a>
+	            				<p class="note">
+			                		Todos los campos son obligatorios, y el mensaje no se enviará hasta que no sean completados.
+			                	</p>	
+            				</div>
+            				<div class="row text-center">
+	            				<button type="submit" class="button button-default"><i class="fa fa-paper-plane"></i> ENVIAR MENSAJE</button>
+	            				<button type="reset" class="button button-reset"><i class="fa fa-trash"></i> REINICIAR FORM</button>
+            				</div>
+            			</div>
+		            </form>
+            	</article>
             </section>
             @include('default.footer')
    			@endsection

@@ -227,13 +227,27 @@ article#values div[data-type]{
 #aviso ul{
     list-style-type: square;
 }
-
-.bold{
+#aviso h3 {
+    margin-top: 15px;
     font-weight: bold;
+    color:#2E85D2;
+}
+#aviso article {
+    font-size: 0.9em;
+    line-height: 1.5em;
+}
+.ol-roman{
+    list-style-type: upper-roman;
 }
 
-.email{
-    color: #2E85D2;
+.link{
+    text-decoration: none;
+    font-weight: bold;
+    color: #0F8FE3;
+    
+}
+.link:hover{
+    color: #0775bd;
 }
 /*******TEXT-END*******/
 
