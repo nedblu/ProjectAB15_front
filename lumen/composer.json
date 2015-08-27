@@ -21,7 +21,6 @@
             "database/"
         ],
         "files":[
-            "app/Http/Controllers/MailItem.php"
         ]
     },
     "autoload-dev": {

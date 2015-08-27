@@ -1,58 +1,55 @@
 <?php namespace App\Http\Controllers;
 
-// use Laravel\Lumen\Routing\Controller as BaseController;
-
-// class MailController extends BaseController
-// {
-//     public function getForm(){
-//     	$data = Input::all();
-//     	echo "amo a mi corazen<br/>".$data['nombre'];
-//     	return "<br/>Si SI si!!";
-//     }
-// }
-
+use Validator;
 use Illuminate\Http\Request;
-use MailItem;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Routing\Redirecto;
 
 class MailController extends Controller {
 
+  public function getForm(Request $request){
+    $datos = array(
+      'nombre' => $request->input('nombre'), 
+      'apellido' => $request->input('apellido'), 
+      'telefono' => $request->input('telefono'), 
+      'correo' => $request->input('correo'), 
+      'mensaje' => $request->input('mensaje')
+    );
+    $rules = array(
+      'nombre' => 'required',
+      'apellido' => 'required',
+      'correo' => 'required|email',
+      'mensaje' => 'required|min:5'
+    );
+    echo '<br/>Done::::Rules';
 
+    $validator = Validator::make($datos, $rules);
+  
+    echo '<br/>Done::::Validator';
 
-    public function getForm(Request $request){
-
-        $mailItem = new MailItem($request->input('nombre'), $request->input('apellido'),$request->input('email'),$request->input('mensaje'));
-
-/***********************************NEED TO READ BELOW***************************************************/
-
-   //      //Get all the data and store it inside Store Variable
-   //      $data = Input::all();
-
-   //      //Validation rules
-   //      $rules = array (
-   //          //'first_name' => 'required', uncomment if you want to grab this field
-   //          //'email' => 'required|email',  uncomment if you want to grab this field
-   //          'message' => 'required|min:5'
-   //      );
-
-   //      //Validate data
-   //      $validator = Validator::make ($data, $rules);
-
-   //      //If everything is correct than run passes.
-   //      if ($validator -> passes()){
-   //      	Mail::send('emails.feedback', $data, function($message) use ($data){
-   //         		//$message->from($data['email'] , $data['first_name']); uncomment if using first name and email fields 
-   //              // $message->from('feedback@gmail.com', 'feedback contact form');
-			//     //email 'To' field: cahnge this to emails that you want to be notified.                    
-			//     // $message->to('feedback@gmail.com', 'John')->cc('feedback@gmail.com')->subject('feedback form submit');
-			// });
-            
-   //          // Redirect to page
-   // 			return Redirect::route('home')->with('message', 'Your message has been sent. Thank You!');
-			// //return View::make('contact');  
-   //      }else{
-   // 			//return contact form with errors
-   //          return Redirect::route('home')->with('error', 'Feedback must contain more than 5 characters. Try Again.');
-   //      }
+    if($validator->fails()){
+      echo '<br/>Done::::IfFails()';
+      
+      //Return to the contact view with errors
+      return Redirec::route('failOrSuccess', array('type' => '0', 'errors' => $errors);
     }
+    else{
+      echo '<br/>Done::::passes()';
+      if ($validator ->passes()){
+        Mail::send('emailView', $mailItem, function( $message) use ($mailItem){
+          $message->from($mailItem->email, $mailItem->name . ' ' . $mailItem->lastname);
+          $message->to('contacto@alphabeta.com.mx', 'Contacto AlphaBeta®');
+          $message->subject($mailItem->name . ' de Contacto AlphaBeta®');
+      });
+
+      // echo '<script type="text/javascript">
+      //           window.location = "'. route('home').'"
+      //       </script>';
+
+      //Return to the contact view with errors
+      return Redirec::route('failOrSuccess', array('type' => '1', 'success' => 'Tu mensaje se ha enviado. !Gracias¡');
+    }
+  }
 
 }

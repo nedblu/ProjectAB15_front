@@ -95,15 +95,24 @@ $app->get('/contacto', ['as' => 'contacto', function () {
 	return view('contacto', ['title' => 'Contacto']);
 }]);
 
-// $app->get('/contato/{$ESMessage}', ['as' => 'contactoESM', function () {
-// 	return view('contacto', ['title' => 'Contacto', 'ESMessage' => '{$ESMessage}']);
-// }]);
-
 $app->post('/enviar',['uses' => 'MailController@getForm', 'as' => 'enviar']);
 
 $app->get('/aviso', ['as' => 'aviso', function () {
 	return view('aviso', ['title' => 'Aviso de Privacidad']);
 }]);
+
+//Return the Contacto view with array.
+//The array structure is:  
+//	If the validation fails:	$array['type' => '0'] == FAILS 		:	$array['errors' => '$errors']	 
+//	If the validation success:	$array['type' => '1'] == SUCCESS 	:	$array['sucess' => '$successMessage']
+$app->get('/contacto/{array}', ['as' => 'failOrSuccess'] function ($array) {
+	
+	if ($array['type'] == 0){
+		return view('contacto', ['title' => 'Contacto', 'errors' => $array['errors']]);
+	}else{
+		return view('contacto', ['title' => 'Contacto', 'success' => $array['success']);
+	}
+});
 
 
 
