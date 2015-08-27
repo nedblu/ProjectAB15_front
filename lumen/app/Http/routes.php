@@ -105,7 +105,7 @@ $app->get('/aviso', ['as' => 'aviso', function () {
 //The array structure is:  
 //	If the validation fails:	$array['type' => '0'] == FAILS 		:	$array['errors' => '$errors']	 
 //	If the validation success:	$array['type' => '1'] == SUCCESS 	:	$array['sucess' => '$successMessage']
-$app->get('/contacto/{array}', ['as' => 'failOrSuccess'] function ($array) {
+$app->get('/contacto/{array}', ['as' => 'failOrSuccess'], function ($array) {
 	
 	if ($array['type'] == 0){
 		return view('contacto', ['title' => 'Contacto', 'errors' => $array['errors']]);
