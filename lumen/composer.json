@@ -7,7 +7,8 @@
     "require": {
         "laravel/lumen-framework": "5.1.*",
         "vlucas/phpdotenv": "~1.0",
-        "vluzrmos/collective-html": "^1.0"
+        "vluzrmos/collective-html": "^1.0",
+        "illuminate/mail": "^5.1"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",

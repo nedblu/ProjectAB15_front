@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirect;
+use Mail;
+// app()['mailer'];
 
 class MailController extends Controller {
 
