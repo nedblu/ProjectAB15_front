@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "694d5bcc32b855826840aec6fc81fc7e",
+    "hash": "8557e11fac38d26a0a3d05537d148c97",
     "packages": [
         {
             "name": "danielstjules/stringy",
@@ -839,6 +839,57 @@
             "time": "2015-06-29 16:31:16"
         },
         {
+            "name": "illuminate/mail",
+            "version": "v5.1.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/mail.git",
+                "reference": "de000dc1d2b74b7d8e746a9be2af470f90b4655b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/mail/zipball/de000dc1d2b74b7d8e746a9be2af470f90b4655b",
+                "reference": "de000dc1d2b74b7d8e746a9be2af470f90b4655b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "5.1.*",
+                "illuminate/contracts": "5.1.*",
+                "illuminate/support": "5.1.*",
+                "php": ">=5.5.9",
+                "psr/log": "~1.0",
+                "swiftmailer/swiftmailer": "~5.1"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Required to use the SES mail driver (~3.0).",
+                "guzzlehttp/guzzle": "Required to use the Mailgun and Mandrill mail drivers (~5.3|~6.0)."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Mail\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "The Illuminate Mail package.",
+            "homepage": "http://laravel.com",
+            "time": "2015-07-11 20:41:11"
+        },
+        {
             "name": "illuminate/pagination",
             "version": "v5.1.8",
             "source": {
@@ -1561,6 +1612,59 @@
                 "psr-3"
             ],
             "time": "2012-12-21 11:40:51"
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "version": "v5.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swiftmailer/swiftmailer.git",
+                "reference": "0697e6aa65c83edf97bb0f23d8763f94e3f11421"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/0697e6aa65c83edf97bb0f23d8763f94e3f11421",
+                "reference": "0697e6aa65c83edf97bb0f23d8763f94e3f11421",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.1,<0.9.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.4-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "lib/swift_required.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Corbyn"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Swiftmailer, free feature-rich PHP mailer",
+            "homepage": "http://swiftmailer.org",
+            "keywords": [
+                "email",
+                "mail",
+                "mailer"
+            ],
+            "time": "2015-06-06 14:19:39"
         },
         {
             "name": "symfony/console",
