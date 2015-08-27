@@ -110,7 +110,7 @@ $app->get('/contacto/{array}', ['as' => 'failOrSuccess'], function ($array) {
 	if ($array['type'] == 0){
 		return view('contacto', ['title' => 'Contacto', 'errors' => $array['errors']]);
 	}else{
-		return view('contacto', ['title' => 'Contacto', 'success' => $array['success']);
+		return view('contacto', ['title' => 'Contacto', 'success' => $array['success']]);
 	}
 });
 
