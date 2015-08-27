@@ -37,10 +37,10 @@ class MailController extends Controller {
       return redirect()->route('failOrSuccess', array('type' => 0, 'errors' => $errors));
     }else{
       echo '<br/>Done::::passes()';
-      Mail::send('emailView', $mailItem, function( $message) use ($mailItem){
-        $message->from($mailItem->email, $mailItem->name . ' ' . $mailItem->lastname);
+      Mail::send('emailView', $datos, function( $message) use ($datos){
+        $message->from($datos['correo'], $datos['nombre'] . ' ' . $datos[apellido]);
         $message->to('contacto@alphabeta.com.mx', 'Contacto AlphaBeta®');
-        $message->subject($mailItem->name . ' de Contacto AlphaBeta®');
+        $message->subject($datos['name'] . ' quiere contactar con AlphaBeta®');
       });
       // echo '<script type="text/javascript">
       //           window.location = "'. route('home').'"
