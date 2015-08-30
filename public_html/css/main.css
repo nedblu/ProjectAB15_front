@@ -97,6 +97,19 @@ textarea {
     color: #000;
     padding: 0.2em 0;
 }
+.flex-caption {
+    width: 96%;
+    padding: 2%;
+    left: 0;
+    bottom: 0;
+    background: rgba(7,117,189,1);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 18px;
+}
 
 #bg-header{
     background-image: url(../img/header.png);
@@ -174,14 +187,6 @@ textarea {
     text-shadow: 2px 2px 1px #C41212;
 }
 
-#slider{
-    background: url(../img/slide-images/slide.gif) center no-repeat;
-    background-color: #0775bd;
-    height: 400px;
-    width: 100%;
-    border-top:5px solid #1789B9;
-    border-bottom:5px solid #1789B9;
-}
 #pintura{
     height: 200px;
     background: url(../img/bannersplash.png) center no-repeat;
