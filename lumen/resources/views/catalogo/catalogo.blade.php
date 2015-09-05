@@ -6,7 +6,6 @@
         @section('content')
                 @include('default.header')
                 @include('default.title')
-                @include('default.slider')
                 <section id="catalogo">
                 	<h3>Catálogo</h3>
                 	<div class="catItem"><a href="{!! route('equipos') !!}">{!! Html::image('img/ABnoDisponible.png') !!} <span>Equipos</span></a></div>

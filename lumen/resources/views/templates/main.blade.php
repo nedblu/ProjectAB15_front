@@ -15,10 +15,8 @@
         {!! Html::style('css/main.css') !!}
         {!! Html::style('css/buttons.css') !!}
         {!! Html::style('js/vendor/flexslider/flexslider.css') !!}
-
-        @yield('customStyles')
         {!! Html::script('js/vendor/modernizr-2.8.3.min.js'); !!}
-        @yield('customScript')
+        @yield('customStyles')
         
     </head>
     <body>
@@ -32,6 +30,7 @@
     {!! Html::script('js/vendor/flexslider/jquery.flexslider-min.js'); !!}
     {!! Html::script('js/plugins.js'); !!}
     {!! Html::script('js/main.js'); !!}
+    @yield('customScript')
     
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
