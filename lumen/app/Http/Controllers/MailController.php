@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirect;
 use Mail;
+use DB;
 
 class MailController extends Controller {
 
@@ -40,16 +41,22 @@ class MailController extends Controller {
     }
     else{
 
-      Mail::send( 'emailView', $datos, function( $message ) use ( $datos ) {
-        
-        $message->from($datos['correo'], $datos['nombre'] . ' ' . $datos['apellido']);
-        $message->to('contacto@alphabeta.com.mx', 'Contacto AlphaBeta');
-        $message->subject($datos['name'] . ' quiere contactar con AlphaBeta®');
+      $recipients = DB::table('emailcontacts')->select('id','name','email')->get();
 
-      });
+      foreach ($recipients as $recipient) {
+
+        Mail::send( 'email.template', $datos, function( $message ) use ( $datos, $recipient ) {
+        
+          $message->from($datos['correo'], $datos['nombre'] . ' ' . $datos['apellido']);
+          $message->to( $recipient->email , $recipient->name );
+          $message->subject($datos['nombre'] . ' quiere contactar con AlphaBeta');
+
+        });
+        
+      }
 
       //Return to the contact view with errors
-      return redirect()->route('failOrSuccess', array('type' => '1', 'success' => 'Tu mensaje se ha enviado. !Gracias¡'));
+      //return redirect()->route('contacto');
 
     }
 
