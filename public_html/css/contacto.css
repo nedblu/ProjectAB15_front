@@ -1,12 +1,15 @@
-.section{
+.section-contacto{
 	font-family: 'Muli', sans-serif;
 	text-align: left;
 }
-.section p:first-child {
+.section-contacto p:first-child {
 	line-height: 1.5em;
     font-size: 1em;
     margin-bottom: 15px;
     color:#3D3D3D;
+}
+.section-contacto h3 {
+	padding-top: 30px; 
 }
 
 .form input[type="text"], .form input[type="email"], .form textarea{

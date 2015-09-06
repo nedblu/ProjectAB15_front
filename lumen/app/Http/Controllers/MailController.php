@@ -7,8 +7,17 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirect;
 use Mail;
 use DB;
+use Session;
 
 class MailController extends Controller {
+
+  public function index(){
+
+    $banners = $this->_getSlider();
+  
+    return view('contacto', ['title' => 'Contacto','banners' => $banners]);
+
+  }
 
   public function getForm( Request $request ){
 
@@ -26,6 +35,7 @@ class MailController extends Controller {
 
       'nombre'    => 'required',
       'apellido'  => 'required',
+      'telefono'  => 'numeric',
       'correo'    => 'required|email',
       'mensaje'   => 'required|min:5'
       
@@ -33,30 +43,29 @@ class MailController extends Controller {
 
     $validator = Validator::make( $datos, $rules );
 
-    if( $validator->fails() ){
+    if( $validator->fails() ) {
       
-      //Return to the contact view with errors
-      return redirect()->route('failOrSuccess', array('type' => 0, 'errors' => $errors));
+      return redirect()->route('contacto')->withErrors( $validator->errors() )->withInput();
 
     }
-    else{
 
-      $recipients = DB::table('emailcontacts')->select('id','name','email')->get();
+    else {
+
+      $recipients = DB::table('emailcontacts')->select('name','email')->get();
 
       foreach ($recipients as $recipient) {
 
         Mail::send( 'email.template', $datos, function( $message ) use ( $datos, $recipient ) {
         
-          $message->from($datos['correo'], $datos['nombre'] . ' ' . $datos['apellido']);
+          $message->from( $datos['correo'], $datos['nombre'] . ' ' . $datos['apellido'] );
           $message->to( $recipient->email , $recipient->name );
-          $message->subject($datos['nombre'] . ' quiere contactar con AlphaBeta');
+          $message->subject( $datos['nombre'] . ' ' . $datos['apellido'] . ' quiere contactar con AlphaBeta' );
 
         });
         
       }
 
-      //Return to the contact view with errors
-      //return redirect()->route('contacto');
+      return redirect()->route('contacto')->with('flash_success' , 'Su mensaje se ha enviado correctamente, en breve nos contactaremos con usted.');
 
     }
 

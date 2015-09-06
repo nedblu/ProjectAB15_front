@@ -91,6 +91,69 @@ textarea {
    Browser Upgrade Prompt
    ========================================================================== */
 
+/**************************************
+* HELPERS FOR FORMATTING TEXT
+***************************************/
+.text-left{text-align:left}
+.text-right{text-align:right}
+.text-center{text-align:center}
+.text-justify{text-align:justify}
+.text-nowrap{white-space:nowrap}
+.text-lowercase{text-transform:lowercase}
+.text-uppercase{text-transform:uppercase}
+.text-capitalize{text-transform:capitalize}
+
+.text-words{color:#65b8ed;}
+.text-danger{color:#ff8c64;}
+
+.divider{font-weight:bold;margin-right: 5px;margin-left: 5px;}
+/**************************************
+* HELPERS FOR IMAGES
+***************************************/
+figure{margin:0}
+img{vertical-align:middle}
+.img-responsive,.thumbnail a>img,.thumbnail>img{display:block;max-width:100%;height:auto}
+.img-rounded{border-radius:6px}
+.img-thumbnail{display:inline-block;max-width:100%;height:auto;padding:4px;line-height:1.42857143;background-color:#fff;border:1px solid #ddd;border-radius:4px;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out}
+.img-circle{border-radius:50%}
+.box {
+  width: 100%;
+  margin: 15px 0 15px 0;
+  padding: 20px;
+  border: 1px;
+  border-radius: 3px;
+}
+.box h1,
+.box h2,
+.box h3,
+.box h4,
+.box h5
+.box h6,
+.box p {
+  margin: 0;
+  padding: 0;
+}
+.box-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.box-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.box-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+.box-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
 .browserupgrade {
     margin: 0.2em 0;
     background: #ccc;
