@@ -60,13 +60,9 @@ class MailController extends Controller {
           $message->from( $datos['correo'], $datos['nombre'] . ' ' . $datos['apellido'] );
           $message->to( $recipient->email , $recipient->name );
           $message->subject( $datos['nombre'] . ' ' . $datos['apellido'] . ' quiere contactar con AlphaBeta' );
-
         });
-        
+
       }
-
-      return redirect()->route('contacto')->with('flash_success' , 'Su mensaje se ha enviado correctamente, en breve nos contactaremos con usted.');
-
     }
 
   }

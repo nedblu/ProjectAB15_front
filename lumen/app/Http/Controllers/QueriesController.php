@@ -41,19 +41,46 @@ class QueriesController extends Controller {
         return view('catalogo.productos', ['title' => $title, 'products' => $products]);
     }
 
+    //nombre,imagen,descricion,sku,colores,ink,equipment,stock
+    //description,colores,ink,equipment
+
     public function getItem($product_id){
-        $product = DB::table('products')->where('id',$product_id)->get();
-        if ($product[0]->colors == '1') {
-            $colors = DB::table('product_colors')->where('product_id', $product_id)->get();
-            echo '<pre> PRODUCTO:::::::::::::::';
-            var_dump($product);
-            echo '<br>';
-            echo '<br>COLORES:::::::::::::::::';
-            var_dump($colors);
-            //Missing the other stuff because the new Daichon's method added
+        $product = DB::table('products')->where('id', $product_id)->get();
+
+        $description = DB::table('descriptions')->where('id', $product[0]->description_id)->get();
+        $product[0]->description_id = $description[0]->body;
+
+        if ($product[0]->colors) {
+            $color_list = DB::table('product_colors')->select('colors_ar')->where('product_id', $product_id)->get();
+            $colores = $this->getColorsOfProduct($color_list[0]->colors_ar);
+        }
+
+        if ($product[0]->ink) {
+            $ink = DB::table('product_inks')->where('product_id', $product_id)->get();
+            $product[0]->ink = $ink[0]->inks_ar;
+        }
+
+        if ($product[0]->equipment) {
+            $equipment = DB::table('product_equips')->where('product_id', $product_id)->get();
+            $product[0]->equipment = $equipment[0]->equip_ar;
         }
         
+        // echo '<pre> PRODUCTO:::::::::::::::<br>';
+        // var_dump($product);
+        // echo '<br>';
+        // echo '<br>COLORES:::::::::::::::::<br>';
+        // var_dump($colores);
+        // echo '<br>';
+        // echo '<br>DETAILS:::::::::::::::::<br>';
+        // var_dump($description);
+        // echo '<br>';
+        // echo '<br>INKS:::::::::::::::::<br>';
+        // var_dump($ink);
+        // echo '<br>';
+        // echo '<br>EQUIPMENT:::::::::::::::::<br>';
+        // var_dump($equipment);  
 
+        return view('catalogo.item', ['title' => $product[0]->name, 'product' => $product]);
     }
 
 }

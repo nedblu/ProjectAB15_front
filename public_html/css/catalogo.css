@@ -57,7 +57,7 @@
 	color:#e74c3c;
 }
 
-.catItemSec{
+/*.catItemSec{
 	border:4px solid #3498db;
 	display: inline-block;
 	vertical-align: middle;
@@ -95,7 +95,7 @@
 .catItemSec:hover > a span{
 	color:#e74c3c;
 }
-
+*/
 .catItemItem{
 	border:4px solid #3498db;
 	display: inline-block;

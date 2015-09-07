@@ -6,19 +6,18 @@
         @section('content')
                 @include('default.header')
                 @include('default.title')
-                @include('default.slider')
                 <section id="catalogo">
-                    <h3>{!! $title !!}</h3>   
-                    @if ($title == 'Planchas'|| $title == 'Tintas' || $title == 'Papeles')
-                        @foreach ($data as $myData)
-                            <div class="catItemItem"><a href="#">{!! Html::image('img/ABnoDisponible.png') !!} <p>{!!$myData->NOMBRE!!}<br/>{!!$myData->SECCION!!}</p></a></div>
-                        @endforeach
-                    @else
-                        @foreach ($data as $myData)
-                            <div class="catItemItem"><a href="#">{!! Html::image('img/ABnoDisponible.png') !!} <p>{!!$myData->NOMBRE!!}<br/>{!!$myData->SUBSECCION!!}</p></a></div>
-                        @endforeach
-                    @endif            
+                        <div class="producto">
+                            <h4>{!! $title !!}</h4>
+                            {!! Html::image('img/no.png') !!} 
+                        </div>          
                 </section>
+
+            <?php
+            echo '<pre> PRODUCTO:::::::::::::::<br>';
+            var_dump($product);
+            echo "</pre>";
+            ?>
                 @include('default.footer')
         @endsection
 
