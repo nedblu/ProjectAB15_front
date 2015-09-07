@@ -30,11 +30,11 @@
 
                         @if (Session::has('flash_success'))
                               <div class="box box-success">
-                                    <p>{{ Session::get('flash_success') }}</p>
+                                    <p class="p">{{ Session::get('flash_success') }}</p>
                               </div>
                         @endif
 
-                        <p>
+                        <p class="p">
                               En <span>AlphaBeta</span> lo más importante es saber tu opinión, por eso abrimos el espacio para que puedas enviarnos tus sugerencias, inquietudes, preguntas y cualquier otra cosa respecto a nuestra empresa.
                         </p>
 
@@ -70,7 +70,7 @@
 	            				<input type="checkbox" name="terminos" tabindex="6" required><span> He leído el</span> <a class="link" href="{{ route('aviso') }}" title="Aviso de Privacidad">aviso de privacidad</a>
 	            				<p class="note">
 			                		Todos los campos son obligatorios, y el mensaje no se enviará hasta que no sean completados.
-			                	</p>	
+			                	      </p>	
             				</div>
             				<div class="row text-center">
 	            				<button type="submit" class="button button-default" tabindex="7"><i class="fa fa-paper-plane"></i> ENVIAR MENSAJE</button>
