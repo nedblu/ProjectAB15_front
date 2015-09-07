@@ -12,7 +12,7 @@
                 	<h3>{!! $title !!}</h3>
                         @foreach ($products as $producto)
                                 <div class="catItemItem">
-                                        <a href="{!! route('producto', ['item' => 6]) !!}">{!! Html::image('img/no.png') !!} 
+                                        <a href="{!! route('producto', ['item' => $producto->id]) !!}">{!! Html::image('img/no.png') !!} 
                                         <br/><p>{!! $producto->name !!}<br/>{!! $producto->parent_id !!}</p></a>
                                 </div>
                         @endforeach
