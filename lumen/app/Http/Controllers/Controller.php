@@ -18,3 +18,5 @@ class Controller extends BaseController
     	return $slides;
     }
 }
+
+                                    

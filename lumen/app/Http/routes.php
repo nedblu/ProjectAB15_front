@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Extra Functions
@@ -8,19 +7,14 @@
 | Here put all functions that you need to pass in routes
 |
 */
-
 /**
 *	Method to get slider contect, for calling in routes use _getSlider()
 *	@return array
 **/
 function _getSlider(){
-
 	$slides = DB::table('banners')->select('id','title','image','uri')->where('published',1)->get();
-
 	return $slides;
-
 }
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -31,12 +25,10 @@ function _getSlider(){
 | and give it the controller to call when that URI is requested.
 |
 */
-
 /******************BIENVENIDOS SECTION******************/
 $app->get('/', ['as' => 'home', function () {
 	
 	$banners = _getSlider();
-
 	return view('home', ['title' => 'Bienvenidos','banners' => $banners]);
 }]);
 
@@ -44,95 +36,15 @@ $app->get('/', ['as' => 'home', function () {
 $app->get('/acerca', ['as' => 'acerca', function () {
 	
 	$banners = _getSlider();
-
 	return view('acerca', ['title' => 'Acerca','banners' => $banners]);
 }]);
 
 /******************CATALOGO SECTION******************/
-$app->get('/catalogo', ['as' => 'catalogo', function () {
-	
-	$banners = _getSlider();
-	
-	return view('catalogo.catalogo', ['title' => 'Catálogo','banners' => $banners]);
-}]);
+$app->get('/catalogo', ['as' => 'reqCatalogo', 'uses' => 'QueriesController@getCatalogo']);
 
-	/****************EQUIPOS****************/
-$app->get('/catalogo/equipos', ['as' => 'equipos', function () {
-	
-	$banners = _getSlider();
-	
-	$json = file_get_contents('cat.json');
-	$data = json_decode($json);
-	$path = array("catálogo","equipos");
-	return view('catalogo.equipos', ['title' => 'Equipos', 'path' => $path, 'data' => $data->EQUIPOS,'banners' => $banners]);
-}]);
+$app->get('/catalogo/{category}/productos', ['as' => 'productos', 'uses' => 'QueriesController@getItems']);
 
-$app->get('/catalogo/equipos/impresoras', ['as' => 'impresoras', function () {
-	
-	$banners = _getSlider();
-	
-	$json = file_get_contents('cat.json');
-	$data = json_decode($json);
-	return view('catalogo.item', ['title' => 'Impresoras', 'data' => $data->EQUIPOS->IMPRESORAS,'banners' => $banners]);
-}]);
-
-$app->get('/catalogo/equipos/planchas', ['as' => 'planchas', function () {
-	
-	$banners = _getSlider();
-	
-	$json = file_get_contents('cat.json');
-	$data = json_decode($json);
-	return view('catalogo.item', ['title' => 'Planchas', 'data' => $data->EQUIPOS->PLANCHAS,'banners' => $banners]);
-}]);
-
-$app->get('/catalogo/equipos/vynil', ['as' => 'vynil', function () {
-	
-	$banners = _getSlider();
-	
-	$json = file_get_contents('cat.json');
-	$data = json_decode($json);
-	return view('catalogo.item', ['title' => 'Vynil', 'data' => $data->EQUIPOS->VYNIL,'banners' => $banners]);
-}]);
-
-	/****************CONSUMIBLES****************/
-$app->get('/catalogo/consumibles', ['as' => 'consumibles', function () {
-	
-	$banners = _getSlider();
-	
-	$json = file_get_contents('cat.json');
-	$data = json_decode($json);
-	$path = array("catálogo","equipos");
-	return view('catalogo.consumibles', ['title' => 'Consumibles', 'path' => $path, 'data' => $data->CONSUMIBLES,'banners' => $banners]);
-}]);
-
-$app->get('/catalogo/consumibles/tintas', ['as' => 'tintas', function () {
-	
-	$banners = _getSlider();
-
-	$json = file_get_contents('cat.json');
-	$data = json_decode($json);
-	return view('catalogo.item', ['title' => 'Tintas', 'data' => $data->CONSUMIBLES->TINTAS,'banners' => $banners]);
-}]);
-
-$app->get('/catalogo/consumibles/papeles', ['as' => 'papeles', function () {
-	
-	$banners = _getSlider();
-
-	$json = file_get_contents('cat.json');
-	$data = json_decode($json);
-	return view('catalogo.item', ['title' => 'Papeles', 'data' => $data->CONSUMIBLES->PAPELES,'banners' => $banners]);
-}]);
-
-$app->get('/catalogo/consumibles/rollos', ['as' => 'rollos', function () {
-	
-	$banners = _getSlider();
-	
-	$json = file_get_contents('cat.json');
-	$data = json_decode($json);
-	return view('catalogo.item', ['title' => 'Rollos', 'data' => $data->CONSUMIBLES->ROLLOS,'banners' => $banners]);
-}]);
-
-
+$app->get('/catalogo/{item}/producto', ['as' => 'producto', 'uses' => 'QueriesController@getItem']);
 
 /******************TECNICAS SECTION******************/
 $app->get('/tecnicas', ['as' => 'tecnicas', function () {
@@ -149,15 +61,13 @@ $app->get('/sucursales', ['as' => 'sucursales', function () {
 	
 	return view('sucursales', ['title' => 'Sucursales','banners' => $banners]);
 }]);
-
 /******************CONTACTO SECTION******************/
 $app->get('/contacto', ['as' => 'contacto', 'uses' => 'MailController@index']);
 
 $app->post('/contacto',['as' => 'contacto_enviar', 'uses' => 'MailController@getForm']);
 
-
 $app->get('/aviso', ['as' => 'aviso', function () {
 	
 	return view('aviso', ['title' => 'Aviso de Privacidad']);
-
 }]);
+
