@@ -9,7 +9,13 @@
             @include('default.header')
             @include('default.title')
             <section class="container section-contacto">
-            	<h3>{!! $title !!}</h3>	
+
+                  @if (Session::has('title'))
+                        <h3>{{ Session::get('title') }}</h3>
+                  @else
+                        <h3>{{ ( isset($title) ) ? $title : false }}</h3>
+                  @endif
+            		
             	<article class="twelve columns section">
 
                         @if (count($errors) > 0)
@@ -40,8 +46,8 @@
 	            				<input type="text" placeholder="Nombre(s)" name="nombre" value="{{ old('nombre') }}" tabindex="1" required>	
             				</div>
             				<div class="row group-form">
-	            				<label for="telefono">Teléfono [10 dígitos]</label>
-	            				<input type="text" placeholder="0123456789" name="telefono" value="{{ old('telefono') }}" tabindex="3" maxlength="10" required>	
+	            				<label for="telefono">Teléfono [10 dígitos] (Opcional)</label>
+	            				<input type="text" placeholder="0123456789" name="telefono" value="{{ old('telefono') }}" tabindex="3" maxlength="10">	
             				</div>
             			</div>
 

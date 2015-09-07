@@ -21,16 +21,6 @@ class MailController extends Controller {
 
   public function getForm( Request $request ){
 
-    $datos = array(
-
-      'nombre'    => $request->input('nombre'), 
-      'apellido'  => $request->input('apellido'), 
-      'telefono'  => $request->input('telefono'), 
-      'correo'    => $request->input('correo'), 
-      'mensaje'   => $request->input('mensaje')
-
-    );
-
     $rules = array(
 
       'nombre'    => 'required',
@@ -41,7 +31,7 @@ class MailController extends Controller {
       
     );
 
-    $validator = Validator::make( $datos, $rules );
+    $validator = Validator::make( $request->all(), $rules );
 
     if( $validator->fails() ) {
       
@@ -53,19 +43,22 @@ class MailController extends Controller {
 
       $recipients = DB::table('emailcontacts')->select('name','email')->get();
 
+      $sender = $request->all();
+
       foreach ($recipients as $recipient) {
 
-        Mail::send( 'email.template', $datos, function( $message ) use ( $datos, $recipient ) {
+        Mail::send( 'email.template', $request->all(), function( $message ) use ( $sender, $recipient ) {
         
-          $message->from( $datos['correo'], $datos['nombre'] . ' ' . $datos['apellido'] );
+          $message->from( $sender['correo'], $sender['nombre'] . ' ' . $sender['apellido'] );
           $message->to( $recipient->email , $recipient->name );
-          $message->subject( $datos['nombre'] . ' ' . $datos['apellido'] . ' quiere contactar con AlphaBeta' );
+          $message->subject( $sender['nombre'] . ' ' . $sender['apellido'] . ' quiere contactar con AlphaBeta' );
 
         });
         
       }
 
-      return redirect()->route('contacto')->with('flash_success' , 'Su mensaje se ha enviado correctamente, en breve nos contactaremos con usted.');
+      return redirect()->route('contacto')->with('flash_success' , 'Su mensaje se ha enviado correctamente, en breve nos contactaremos con usted.')
+                                          ->with('title', 'Contacto');
 
     }
 
