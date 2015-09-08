@@ -34,25 +34,25 @@ class QueriesController extends Controller {
         $title = $title[0]->name;
         foreach ($products as $product) {
             $parentName = DB::table('categories')->where('id',$product->parent_id)->get();
-            $parentName = $parentName[0]->name;
-            $product->parent_id = $parentName;
+            $product->parent_id = $parentName[0]->name;
         }
 
         return view('catalogo.productos', ['title' => $title, 'products' => $products]);
     }
 
-    //nombre,imagen,descricion,sku,colores,ink,equipment,stock
-    //description,colores,ink,equipment
-
+    //nombre,imagen,descripcion,sku,colores,ink,equipment,stock
     public function getItem($product_id){
         $product = DB::table('products')->where('id', $product_id)->get();
 
         $description = DB::table('descriptions')->where('id', $product[0]->description_id)->get();
         $product[0]->description_id = $description[0]->body;
 
+        $parentName = DB::table('categories')->where('id', $product[0]->parent_id)->get();
+        $product[0]->parent_id = $parentName[0]->name;
+
         if ($product[0]->colors) {
             $color_list = DB::table('product_colors')->select('colors_ar')->where('product_id', $product_id)->get();
-            $colores = $this->getColorsOfProduct($color_list[0]->colors_ar);
+            $colors = $this->getColorsOfProduct($color_list[0]->colors_ar);
         }
 
         if ($product[0]->ink) {
@@ -64,23 +64,11 @@ class QueriesController extends Controller {
             $equipment = DB::table('product_equips')->where('product_id', $product_id)->get();
             $product[0]->equipment = $equipment[0]->equip_ar;
         }
-        
-        // echo '<pre> PRODUCTO:::::::::::::::<br>';
-        // var_dump($product);
-        // echo '<br>';
-        // echo '<br>COLORES:::::::::::::::::<br>';
-        // var_dump($colores);
-        // echo '<br>';
-        // echo '<br>DETAILS:::::::::::::::::<br>';
-        // var_dump($description);
-        // echo '<br>';
-        // echo '<br>INKS:::::::::::::::::<br>';
-        // var_dump($ink);
-        // echo '<br>';
-        // echo '<br>EQUIPMENT:::::::::::::::::<br>';
-        // var_dump($equipment);  
-
-        return view('catalogo.item', ['title' => $product[0]->name, 'product' => $product]);
+        if ($product[0]->colors) {
+            return view('catalogo.item', ['title' => $product[0]->name, 'product' => $product, 'colors' => $colors]);
+        }else{
+            return view('catalogo.item', ['title' => $product[0]->name, 'product' => $product]);
+        }
     }
 
 }
