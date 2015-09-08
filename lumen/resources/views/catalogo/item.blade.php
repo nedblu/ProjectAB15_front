@@ -18,12 +18,12 @@
                                  <br/>
                             @endif
                             
-                            @if ($product[0]->ink != 0)
+                            @if ($product[0]->ink)
                                 <span class="ink">TINTA: {!! $product[0]->ink !!}</span>
-                                 <br/>
+                                <br/>
                             @endif
 
-                            @if ($product[0]->equipment != 0)
+                            @if ($product[0]->equipment)
                                 <span class="ink">EQUIPO: {!! $product[0]->equipment !!}</span>
                                  <br/>
                             @endif
@@ -40,14 +40,6 @@
 
                         </div>          
                 </section>
-
-            <?php
-            //nombre,imagen,descripcion,sku,colores,ink,equipment,stock
-            echo '<pre> PRODUCTO:::::::::::::::<br>';
-            var_dump($product);
-            echo $product[0]->ink;
-            echo "</pre>";
-            ?>
                 @include('default.footer')
         @endsection
 
