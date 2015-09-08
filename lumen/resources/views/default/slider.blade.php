@@ -1,6 +1,6 @@
 <section>
 	@if($banners)
-	<div class="flexslider">
+	<div class="flexslider text-center">
 		<ul class="slides">
 
 		@foreach($banners as $slide)

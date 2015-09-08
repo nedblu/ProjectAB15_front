@@ -9,7 +9,13 @@
             @include('default.header')
             @include('default.title')
             <section class="container section-contacto">
-            	<h3>{!! $title !!}</h3>	
+
+                  @if (Session::has('title'))
+                        <h3>{{ Session::get('title') }}</h3>
+                  @else
+                        <h3>{{ ( isset($title) ) ? $title : false }}</h3>
+                  @endif
+            		
             	<article class="twelve columns section">
 
                         @if (count($errors) > 0)
@@ -24,11 +30,11 @@
 
                         @if (Session::has('flash_success'))
                               <div class="box box-success">
-                                    <p>{{ Session::get('flash_success') }}</p>
+                                    <p class="p">{{ Session::get('flash_success') }}</p>
                               </div>
                         @endif
 
-                        <p>
+                        <p class="p">
                               En <span>AlphaBeta</span> lo más importante es saber tu opinión, por eso abrimos el espacio para que puedas enviarnos tus sugerencias, inquietudes, preguntas y cualquier otra cosa respecto a nuestra empresa.
                         </p>
 
@@ -40,8 +46,8 @@
 	            				<input type="text" placeholder="Nombre(s)" name="nombre" value="{{ old('nombre') }}" tabindex="1" required>	
             				</div>
             				<div class="row group-form">
-	            				<label for="telefono">Teléfono [10 dígitos]</label>
-	            				<input type="text" placeholder="0123456789" name="telefono" value="{{ old('telefono') }}" tabindex="3" maxlength="10" required>	
+	            				<label for="telefono">Teléfono [10 dígitos] (Opcional)</label>
+	            				<input type="text" placeholder="0123456789" name="telefono" value="{{ old('telefono') }}" tabindex="3" maxlength="10">	
             				</div>
             			</div>
 
@@ -64,7 +70,7 @@
 	            				<input type="checkbox" name="terminos" tabindex="6" required><span> He leído el</span> <a class="link" href="{{ route('aviso') }}" title="Aviso de Privacidad">aviso de privacidad</a>
 	            				<p class="note">
 			                		Todos los campos son obligatorios, y el mensaje no se enviará hasta que no sean completados.
-			                	</p>	
+			                	      </p>	
             				</div>
             				<div class="row text-center">
 	            				<button type="submit" class="button button-default" tabindex="7"><i class="fa fa-paper-plane"></i> ENVIAR MENSAJE</button>
