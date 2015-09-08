@@ -41,7 +41,7 @@
                                                 </div>
                                                 <div class="product-card-info six columns">
                                                     <h5>{{ $category->name }}</h5>
-                                                    <p>Lorem ipsum doloLorem ipsum dolo Lorem ipsum dolo</p>
+                                                    <p>No disponible</p>
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </a>

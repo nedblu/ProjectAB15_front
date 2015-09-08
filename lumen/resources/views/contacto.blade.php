@@ -68,9 +68,6 @@
             				</div>
             				<div class="row confirmation">
 	            				<input type="checkbox" name="terminos" tabindex="6" required><span> He leído el</span> <a class="link" href="{{ route('aviso') }}" title="Aviso de Privacidad">aviso de privacidad</a>
-	            				<p class="note">
-			                		Todos los campos son obligatorios, y el mensaje no se enviará hasta que no sean completados.
-			                	      </p>	
             				</div>
             				<div class="row text-center">
 	            				<button type="submit" class="button button-default" tabindex="7"><i class="fa fa-paper-plane"></i> ENVIAR MENSAJE</button>

@@ -8,13 +8,13 @@
                 @include('default.title')
                 <div class="container">
 
-                    <section class="twelve columns row" id="breadcrumb">
+                    <!--<section class="twelve columns row" id="breadcrumb">
                         <ul class="breadcrumb">
                             <li><a href="{!! route('reqCatalogo') !!}" title="Catálogo" >Catálogo</a></li>
                             <li><a href="{!! route('productos') !!}" title="Catálogo" >Catálogo</a></li>
                             <li class="active">{{ $title }}</li>
                         </ul>
-                    </section>
+                    </section>-->
 
                     <section class="twelve columns row" id="producto">
 

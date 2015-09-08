@@ -344,6 +344,12 @@ article#values div[data-type]{
 .linkF:hover{
     color: #e74c3c;
 }
+.title-main {
+    font-weight: bold;
+    color:#2E85D2;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
 /*******RIGHTS-END*******/
 
 
