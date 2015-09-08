@@ -85,8 +85,11 @@
 		<p>
 			Los datos de contacto de {{ $nombre . " " . $apellido }} son:
 			<ul>
-				<li><strong>Nombre:</strong> {{ $nombre . " " . $apellido }}</li>
-				<li><strong>Correo:</strong> {{ $correo }}</li>
+				<li><strong>Nombre: </strong>{{ $nombre . " " . $apellido }}</li>
+				<li><strong>Correo: </strong>{{ $correo }}</li>
+				@if ($telefono)
+					<li><strong>Teléfono: </strong>{{ $telefono }}</li>
+				@endif
 			</ul>
 			<br/>
 			Por favor ponte en contacto con {{ $nombre . " " . $apellido }} ({{ $correo }}) para brindarle un excelente servicio. Gracias.
