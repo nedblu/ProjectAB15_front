@@ -9,21 +9,14 @@
                     <h3>{!! $title !!}</h3>
                     <article>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                         </p>
-                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                Grupo Alpha Beta es una compañía con más de 20 años de experiencia que inicio con la distribución autorizada de los productos Epson y con el objetivo de brindarles a los clientes la mejor calidad y el mejor servicio.
                         </p>
+                        <p>
+                                Con el paso de los años Alpha Beta fue evolucionando hasta convertirse en una empresa de alto nivel nacional la cual brinda a sus clientes los mejores productos en los ámbitos: fotográficos,impresión digital, impresión textil, sublimación e impresión LED.
+                        </p>
+                        <p>
+                                Alpha Beta es una empresa dispuesta a guiarlo en el proceso de aprendizaje, compra y venta de equipos, consumibles, entre otros con el fin de hacer que cada venta sea más que una simple compra.
+                         </p>
                         <p id="signature">Atentamente: AlphaBeta</p>  
                     </article>
                 </section> 
