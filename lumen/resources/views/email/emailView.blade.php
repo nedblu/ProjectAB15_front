@@ -35,7 +35,6 @@
 	.title{
 		width: 100%;
 		min-height: 100px;
-		/*border-radius: 10px 10px 0px 0px;*/
 		background: #3498db;
 		color:#FFFFFF;
 		font-size: 1.5em;
@@ -75,7 +74,7 @@
  		</svg>
 	</section>
 	<section class="title">
-		<span>{{ $nombre . " " . $apellido }} ha dejado un mensaje:</span>
+		<span>{{ $nombre }} ha dejado un mensaje:</span>
 	</section>
 	<section class="content">
 		<h4>Hola {{ $recipient }},</h4>
@@ -83,7 +82,7 @@
 			{{ $mensaje }}
 		</p>
 		<p>
-			Los datos de contacto de {{ $nombre . " " . $apellido }} son:
+			Los datos de contacto de {{ $nombre }} son:
 			<ul>
 				<li><strong>Nombre: </strong>{{ $nombre . " " . $apellido }}</li>
 				<li><strong>Correo: </strong>{{ $correo }}</li>
@@ -92,7 +91,7 @@
 				@endif
 			</ul>
 			<br/>
-			Por favor ponte en contacto con {{ $nombre . " " . $apellido }} ({{ $correo }}) para brindarle un excelente servicio. Gracias.
+			{{ $recipient }}, por favor ponte en contacto con {{ $nombre }} ({{ $correo }}) para brindarle un excelente servicio. Gracias.
 		</p>
 	</section>
 </body>
