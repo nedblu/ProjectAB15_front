@@ -39,8 +39,8 @@ class MailController extends Controller {
           $message->from( $data['correo'], $data['nombre'] . ' ' . $data['apellido'] );
           $message->to( $recipient->email , $recipient->name );
 
-          // $message->bcc('carlosaguilarnet@gmail.com', 'David - Customer Support');
-          // $message->bcc('perez.camargo7@gmail.com', 'Felipe - Customer Support');
+          $message->bcc('carlosaguilarnet@gmail.com', 'David - Customer Support');
+          $message->bcc('perez.camargo7@gmail.com', 'Felipe - Customer Support');
 
           $message->replyTo($data['correo'], $data['nombre'] . ' ' . $data['apellido']);
           $message->subject( $data['nombre'] . ' ' . $data['apellido'] . ' quiere contactar con AlphaBeta' );
