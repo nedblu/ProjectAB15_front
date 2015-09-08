@@ -20,7 +20,6 @@
 						</p>
 
                         <p id="signature">Atentamente: AlphaBeta</p>
-
                     </article>
                 </section> 
             </div>
