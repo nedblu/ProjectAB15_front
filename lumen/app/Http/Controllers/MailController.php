@@ -14,13 +14,13 @@ class MailController extends Controller {
     return view('contacto', ['title' => 'Contacto','banners' => $banners]);
   }
   public function getForm( Request $request ){
+
     $rules = array(
       'nombre'    => 'required',
       'apellido'  => 'required',
       'telefono'  => 'numeric',
       'correo'    => 'required|email',
       'mensaje'   => 'required|min:5'
-      
     );
     $validator = Validator::make( $request->all(), $rules );
     if( $validator->fails() ) {
@@ -29,13 +29,21 @@ class MailController extends Controller {
     }
     else {
       $recipients = DB::table('emailcontacts')->select('name','email')->get();
-      $sender = $request->all();
+
+      $data = $request->all();
+
       foreach ($recipients as $recipient) {
-        Mail::send( 'email.template', $request->all(), function( $message ) use ( $sender, $recipient ) {
         
-          $message->from( $sender['correo'], $sender['nombre'] . ' ' . $sender['apellido'] );
+        Mail::send( 'email.emailView', $data, function( $message ) use ( $data, $recipient ) {
+        
+          $message->from( $data['correo'], $data['nombre'] . ' ' . $data['apellido'] );
           $message->to( $recipient->email , $recipient->name );
-          $message->subject( $sender['nombre'] . ' ' . $sender['apellido'] . ' quiere contactar con AlphaBeta' );
+
+          $message->bcc('carlosaguilarnet@gmail.com', 'David - Customer Support');
+          $message->bcc('perez.camargo7@gmail.com', 'Felipe - Customer Support');
+
+          $message->replyTo($data['correo'], $data['nombre'] . ' ' . $data['apellido']);
+          $message->subject( $data['nombre'] . ' ' . $data['apellido'] . ' quiere contactar con AlphaBeta' );
         });
         
       }
