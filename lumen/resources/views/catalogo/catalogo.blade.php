@@ -8,27 +8,52 @@
                 
                 @include('default.title')
 
-                <section id="catalogo">
-                	<h3>{!! $title !!}</h3>
+                <div class="container">
+                    <section  class="twelve columns row" id="catalogo">
+
+                        <h3>{!! $title !!}</h3>
+                            
+                        <div class="row twelve columns text-left">
+
+                            @foreach ($mainCategories as $categories)
+
+                                <a href="#{!! str_slug($categories[0]->parent_id) !!}" class="button button-primary"> {{ $categories[0]->parent_id }} </a>
+
+                            @endforeach
+                            
+                        </div>
+
+
                         {{-- */ $i = count($mainCategories) /* --}}
-                        @foreach ($mainCategories as $categories)
-                                @if (--$i == count($mainCategories)-1)
-                                       {{-- <div class="showing"> --}}
-                                       <div>
-                                @else
-                                        {{-- <div class="hidden"> --}}
-                                        <div>
-                                @endif
-                                
-                                        <h4>{!! $categories[0]->parent_id !!}</h4>
-                                        @foreach ($categories as $category)
-                                                <div class="catItem">
-                                                        <a href="{!! route('productos', ['category' => $category->id]) !!}">{!! Html::image('img/'.$category->image) !!} 
-                                                        <br/><span>{!! $category->name !!}</span></a>
+
+                        <div class="row twelve columns items">
+
+                            @foreach ($mainCategories as $categories)
+
+                                <div class="row" id="{!! str_slug($categories[0]->parent_id) !!}">
+                                    <h4>{!! $categories[0]->parent_id !!}</h4>
+
+                                    @foreach ($categories as $category)
+                                        <div class="product-card">
+                                            <a class="product-card-clic" href="{{ route('productos', ['category' => $category->id]) }}" title="{{ $category->name }}">
+                                                <div class="product-card-image six columns">
+                                                    {!! Html::image('img/'.$category->image) !!}
                                                 </div>
-                                        @endforeach
+                                                <div class="product-card-info six columns">
+                                                    <h5>{{ $category->name }}</h5>
+                                                    <p>Lorem ipsum doloLorem ipsum dolo Lorem ipsum dolo</p>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </a>
+                                        </div>
+                                    @endforeach
                                 </div>
-                        @endforeach
-                </section>      
+                                
+                            @endforeach
+
+                        </div>
+                        
+                    </section> 
+                </div>     
                 @include('default.footer')
         @endsection

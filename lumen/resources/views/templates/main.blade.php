@@ -18,6 +18,8 @@
         {!! Html::style('css/font-awesome.css') !!}
         {!! Html::style('css/main.css') !!}
         {!! Html::style('css/buttons.css') !!}
+        {!! Html::style('css/breadcrumbs.css') !!}
+        {!! Html::style('css/tooltipster.css') !!}
         {!! Html::style('js/vendor/flexslider/flexslider.css') !!}
         {!! Html::script('js/vendor/modernizr-2.8.3.min.js'); !!}
         @yield('customStyles')
@@ -32,6 +34,8 @@
     </body>
     {!! Html::script('js/vendor/jquery-1.11.3.min.js') !!}
     {!! Html::script('js/vendor/flexslider/jquery.flexslider-min.js'); !!}
+    {!! Html::script('http://imsky.github.io/holder/holder.js'); !!}
+    {!! Html::script('js/vendor/jquery.tooltipster.min.js'); !!}
     {!! Html::script('js/plugins.js'); !!}
     {!! Html::script('js/main.js'); !!}
     @yield('customScript')

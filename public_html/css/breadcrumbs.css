@@ -1,0 +1,28 @@
+#breadcrumb {
+	margin-top: 35px;
+}
+.breadcrumb {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: #E6E6E6;
+	border-radius: 4px;
+	padding: 8px 5px 8px 8px;
+}
+
+.breadcrumb > li {
+	display:inline-block;
+}
+.breadcrumb li a {
+	text-decoration: none;
+	color:#2E85D2;
+	margin: 0;
+}
+.breadcrumb > li+li:before {
+	padding:0 5px;
+	color:#ccc;
+	content:"/\00a0";
+}
+.breadcrumb > .active{
+	color:#777;
+}
