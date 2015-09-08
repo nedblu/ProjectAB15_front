@@ -59,6 +59,10 @@
 		border-right: 1px solid #7f8c8d;
 		box-shadow: 0px 5px 3px #7f8c8d;
 	}
+	.msg-content{
+		padding: 10px;
+		background-color: #F5F5F5;
+	}
 
 	</style>
 </head>
@@ -71,23 +75,21 @@
  		</svg>
 	</section>
 	<section class="title">
-		<span>{Nombre(s)} ha dejado un mensaje:</span>
+		<span>{{ $nombre . " " . $apellido }} ha dejado un mensaje:</span>
 	</section>
 	<section class="content">
-		<h4>Hola {Nombre(s) de recipiente},</h4>
-		<p>
-			{Mensaje del remitente}
+		<h4>Hola administrador,</h4>
+		<p class="msg-content">
+			{{ $mensaje }}
 		</p>
-		<br/>
 		<p>
 			Los datos de contacto de {Nombre y Apellido de remitente} son:
 			<ul>
-				<li>Nombre(s): {Nombre(s) de remitente}</li>
-				<li>Apellido(s): {Apellido(s) de remitente}</li>
-				<li>Correo: {Correo de remitente}</li>
+				<li><strong>Nombre:</strong> {{ $nombre . " " . $apellido }}</li>
+				<li><strong>Correo:</strong> {{ $correo }}</li>
 			</ul>
 			<br/>
-			Por favor {Nombre(s) de recipiente}, ponte en contacto con {Nombre(s) de remitente} para brindarle un excelente servicio. Gracias.
+			Por favor ponte en contacto con {{ $nombre . " " . $apellido }} ({{ $correo }}) para brindarle un excelente servicio. Gracias.
 		</p>
 	</section>
 
