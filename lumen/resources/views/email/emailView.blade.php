@@ -78,12 +78,12 @@
 		<span>{{ $nombre . " " . $apellido }} ha dejado un mensaje:</span>
 	</section>
 	<section class="content">
-		<h4>Hola administrador,</h4>
+		<h4>Hola {{ $recipient }},</h4>
 		<p class="msg-content">
 			{{ $mensaje }}
 		</p>
 		<p>
-			Los datos de contacto de {Nombre y Apellido de remitente} son:
+			Los datos de contacto de {{ $nombre . " " . $apellido }} son:
 			<ul>
 				<li><strong>Nombre:</strong> {{ $nombre . " " . $apellido }}</li>
 				<li><strong>Correo:</strong> {{ $correo }}</li>
@@ -92,7 +92,5 @@
 			Por favor ponte en contacto con {{ $nombre . " " . $apellido }} ({{ $correo }}) para brindarle un excelente servicio. Gracias.
 		</p>
 	</section>
-
-
 </body>
 </html>

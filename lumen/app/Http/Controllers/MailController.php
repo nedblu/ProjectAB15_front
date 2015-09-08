@@ -33,14 +33,14 @@ class MailController extends Controller {
       $data = $request->all();
 
       foreach ($recipients as $recipient) {
-        
+        $data['recipient'] = $recipient->name;
         Mail::send( 'email.emailView', $data, function( $message ) use ( $data, $recipient ) {
         
           $message->from( $data['correo'], $data['nombre'] . ' ' . $data['apellido'] );
           $message->to( $recipient->email , $recipient->name );
 
-          $message->bcc('carlosaguilarnet@gmail.com', 'David - Customer Support');
-          $message->bcc('perez.camargo7@gmail.com', 'Felipe - Customer Support');
+          // $message->bcc('carlosaguilarnet@gmail.com', 'David - Customer Support');
+          // $message->bcc('perez.camargo7@gmail.com', 'Felipe - Customer Support');
 
           $message->replyTo($data['correo'], $data['nombre'] . ' ' . $data['apellido']);
           $message->subject( $data['nombre'] . ' ' . $data['apellido'] . ' quiere contactar con AlphaBeta' );
