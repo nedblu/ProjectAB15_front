@@ -37,7 +37,12 @@
                                         <div class="product-card">
                                             <a class="product-card-clic" href="{{ route('productos', ['category' => $category->id]) }}" title="{{ $category->name }}">
                                                 <div class="product-card-image six columns">
+                                                @if ($category->image && $category->image != 'no.png')
                                                     {!! Html::image('img/'.$category->image) !!}
+                                                @else
+                                                    {!! Html::image('http://placehold.it/150x150/A0D2F2/2980b9/?text=150x150') !!}
+                                                @endif
+
                                                 </div>
                                                 <div class="product-card-info six columns">
                                                     <h5>{{ $category->name }}</h5>
