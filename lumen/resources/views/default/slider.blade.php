@@ -5,7 +5,7 @@
 
 		@foreach($banners as $slide)
 			<li>
-				@if($slide->uri)
+				@if($slide->uri && $slide->uri != "uri")
 					<a href="{!! url( $slide->uri ) !!}" title="{!! $slide->title !!}" >{!! Html::image('content/slide-show/caption_' . $slide->image, $slide->title) !!}</a>
 					<p class="flex-caption">{!! $slide->title !!}</p>
 				@else
@@ -17,7 +17,6 @@
 		@endforeach
 
 		</ul>
-		
 	</div>
 	@endif
 
