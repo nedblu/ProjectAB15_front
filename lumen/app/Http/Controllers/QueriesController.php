@@ -55,18 +55,18 @@ class QueriesController extends Controller {
     }
 
     //nombre,imagen,descripcion,sku,colores,ink,equipment,stock
-    public function getItem($product_id){
+    public function getItem($product_id, $breadcrumbMiss){
 
         $product = DB::table('products')->where('id', $product_id)->get();
         
         /*$child = DB::table('categories')->where('id',$product[0]->parent_id)->get();
         $subcategory = DB::table('categories')->where('id',$child[0]->parent_id)->get();
         $parent = DB::table('categories')->where('id',$subcategory[0]->parent_id)->get();
-
-        $breadcrumb = array(
-            0 => array( 'name' => $parent[0]->name, 'link'=> route('reqCatalogo').'#' . str_slug($parent[0]->name)),
-            1 => array( 'name' => $subcategory[0]->name, 'link' => route('productos', ['category' => $subcategory[0]->id]))
-        );*/
+        */
+        // $breadcrumb = array(
+        //     0 => array( 'name' => $parent[0]->name, 'link'=> route('reqCatalogo').'#' . str_slug($parent[0]->name)),
+        //     1 => array( 'name' => $subcategory[0]->name, 'link' => route('productos', ['category' => $subcategory[0]->id]))
+        // );
 
 
         $description = DB::table('descriptions')->where('id', $product[0]->description_id)->get();
@@ -89,6 +89,10 @@ class QueriesController extends Controller {
             $equipment = DB::table('product_equips')->where('product_id', $product_id)->get();
             $product[0]->equipment = $equipment[0]->equip_ar;
         }
+
+        // echo "<pre>";
+        // echo($breadcrumbMiss);
+
         if ($product[0]->colors) {
             return view('catalogo.item', ['title' => $product[0]->name, 'product' => $product, 'colors' => $colors]);
         }else{

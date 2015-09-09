@@ -44,7 +44,7 @@ $app->get('/catalogo', ['as' => 'reqCatalogo', 'uses' => 'QueriesController@getC
 
 $app->get('/catalogo/{category}/productos', ['as' => 'productos', 'uses' => 'QueriesController@getItems']);
 
-$app->get('/catalogo/{item}/producto', ['as' => 'producto', 'uses' => 'QueriesController@getItem']);
+$app->get('/catalogo/{item}/producto/{title}', ['as' => 'producto', 'uses' => 'QueriesController@getItem']);
 
 /******************TECNICAS SECTION******************/
 $app->get('/tecnicas', ['as' => 'tecnicas', function () {

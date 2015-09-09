@@ -25,13 +25,13 @@
                         @foreach ($products as $producto)
                                 
                             <div class="product-card">
-                                <a class="product-card-clic" href="{!! route('producto', ['item' => $producto->id]) !!}" title="{{ $producto->name }}">
+                                <a class="product-card-clic" href="{!! route('producto', ['item' => $producto->id, 'title' => $title]) !!}" title="{{ $producto->name }}">
                                     <div class="product-card-image six columns">
                                         {!! Html::image('img/no.png') !!}
                                     </div>
                                     <div class="product-card-info six columns">
                                         <h5>{{ $producto->name }}</h5>
-                                        <p>No disponible</p>
+                                        <p>{!! $producto->parent_id !!}</p>
                                     </div>
                                     <div class="clearfix"></div>
                                 </a>
