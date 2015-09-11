@@ -22,16 +22,20 @@
                     	
                         <h3>{{ $title }}</h3>
 
-                        @foreach ($products as $producto)
+                        @foreach ($products as $product)
                                 
                             <div class="product-card">
-                                <a class="product-card-clic" href="{!! route('producto', ['item' => $producto->id, 'title' => $title]) !!}" title="{{ $producto->name }}">
+                                <a class="product-card-clic" href="{!! route('producto', ['item' => $product->id, 'title' => $title]) !!}" title="{{ $product->name }}">
                                     <div class="product-card-image six columns">
-                                        {!! Html::image('img/no.png') !!}
+                                        @if ($product->image == 'na.png')
+                                            {!! Html::image('http://placehold.it/150x150/A0D2F2/2980b9/?text=150x150') !!}
+                                        @else
+                                            {!! Html::image('img/'.$productxs->image,'image',['class' => 'mainImage']) !!} 
+                                        @endif
                                     </div>
                                     <div class="product-card-info six columns">
-                                        <h5>{{ $producto->name }}</h5>
-                                        <p>{!! $producto->parent_id !!}</p>
+                                        <h5>{{ $product->name }}</h5>
+                                        <p>{!! $product->parent_id !!}</p>
                                     </div>
                                     <div class="clearfix"></div>
                                 </a>
