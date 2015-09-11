@@ -47,12 +47,14 @@ $app->get('/catalogo/{category}/productos', ['as' => 'productos', 'uses' => 'Que
 $app->get('/catalogo/{item}/producto/{title}', ['as' => 'producto', 'uses' => 'QueriesController@getItem']);
 
 /******************TECNICAS SECTION******************/
-$app->get('/tecnicas', ['as' => 'tecnicas', function () {
+// $app->get('/tecnicas', ['as' => 'tecnicas', function () {
 	
-	$banners = _getSlider();
+// 	$banners = _getSlider();
 	
-	return view('tecnicas', ['title' => 'Técnicas','banners' => $banners]);
-}]);
+// 	return view('tecnicas', ['title' => 'Técnicas','banners' => $banners]);
+// }]);
+
+$app->get('/tecnicas', ['as' => 'reqTecnicas', 'uses' => 'QueriesController@getTechniques']);
 
 /******************SUCURSALES SECTION******************/
 $app->get('/sucursales', ['as' => 'sucursales', function () {

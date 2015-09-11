@@ -27,7 +27,11 @@ class QueriesController extends Controller {
         return view('catalogo.catalogo', ['title' => 'Catalogo', 'mainCategories' => $mainCategories]);
     }
 
-    //depends of the parameter sent from the catalogo view
+    /**
+    *   Method to get the Items related to the second level root categoty
+    *   @param $categoru_id
+    *   @return array
+    **/
     public function getItems($category_id){
         
         /*********** BREADCRUMBS -START- ***********/
@@ -54,7 +58,12 @@ class QueriesController extends Controller {
         return view('catalogo.productos', ['title' => $title, 'products' => $products,'breadcrumb' => $breadcrumb]);
     }
 
-    //nombre,imagen,descripcion,sku,colores,ink,equipment,stock
+    /**
+    *   Method to get all details from specific Item 
+    *   @param $product_id
+    *   @param $breadcrumMiss
+    *   @return array
+    **/
     public function getItem($product_id, $breadcrumbMiss){
 
         $product = DB::table('products')->where('id', $product_id)->get();
@@ -90,15 +99,18 @@ class QueriesController extends Controller {
             $product[0]->equipment = $equipment[0]->equip_ar;
         }
 
-        // echo "<pre>";
-        // echo($breadcrumbMiss);
-
         if ($product[0]->colors) {
             return view('catalogo.item', ['title' => $product[0]->name, 'product' => $product, 'colors' => $colors]);
         }else{
             return view('catalogo.item', ['title' => $product[0]->name, 'product' => $product]);
         }
         
+    }
+
+    public function getTechniques(){
+        $techniques = DB::table('techniques')->get();
+        $banners = $this->_getSlider();
+        return view('tecnicas', ['title' => "Técnicas de impresión", 'techniques' => $techniques, 'banners' => $banners]);
     }
 
 }
