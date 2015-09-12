@@ -1,5 +1,10 @@
 @extends('templates.main')
-
+      @section('customStyles')
+            {!! Html::style('css/tecnicas.css') !!}
+      @endsection
+      @section('customScript')
+            {!! HTML::script('js/function.js'); !!}
+      @endsection
       @section('content')
             @include('default.header')
             @include('default.title')
@@ -11,35 +16,20 @@
             	</div>
                   <div class="table">
                         @foreach ($techniques as $technique)
-                              <div class="tecnica">
-                                    <div class="title"></div>
+                              <div class="technique">
+                                    <h4 class="techniqe-title">{!! $technique->title !!}</h4>
                                     <div class="content">
-                                          <h5>¿Qué es?</h5>
+                                          <h6>¿Qué es?</h6>
                                           <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                {!! $technique->about !!}
                                           </p>
-                                          <h5>¿Dónde lo aplico?</h5>
+                                          <h6>¿Dónde lo aplico?</h6>
                                           <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                {!! $technique->detail !!}
                                           </p>
-                                          <h5>¿Qué se necesita?</h5>
+                                          <h6>¿Qué se necesita?</h6>
                                           <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                Algo :c
                                           </p>
                                     </div>
                               </div>

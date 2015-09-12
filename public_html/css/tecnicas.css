@@ -1,0 +1,29 @@
+.table{
+	margin-top: 100px;
+}
+
+h6{
+	font-size: 1.4em;
+}
+
+.techniqe-title{
+	font-size: 2em;
+	color: #FFFFFF;
+	margin: 0 0 15px 0;
+	font-weight: bold;
+	background: #0775bd;
+	padding-left: 20px;
+}
+
+.technique{
+	margin-bottom: 30px;
+}
+
+.technique p{
+	margin-bottom: 30px;
+	margin-top: -20px;
+}
+
+.content{
+	padding-left: 20px;
+}
