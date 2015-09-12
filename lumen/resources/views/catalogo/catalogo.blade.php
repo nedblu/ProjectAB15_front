@@ -23,9 +23,6 @@
                             
                         </div>
 
-
-                        {{-- */ $i = count($mainCategories) /* --}}
-
                         <div class="row twelve columns items">
 
                             @foreach ($mainCategories as $categories)
