@@ -2,9 +2,6 @@
       @section('customStyles')
             {!! Html::style('css/tecnicas.css') !!}
       @endsection
-      @section('customScript')
-            {!! HTML::script('js/function.js'); !!}
-      @endsection
       @section('content')
             @include('default.header')
             @include('default.title')
@@ -19,11 +16,11 @@
                         @foreach ($techniques as $technique)
                               <div class="technique">
                                     @if (--$i == count($techniques)-1)
-                                          <h6 class="techniqe-title"><i class="fa fa-plus-square"></i> {!! $technique->title !!}</h6>
-                                          <div class="content showing">
+                                          <h6 class="techniqe-title" onclick="collapseExpand('{!! $i !!}','icon{!! $i !!}')"><i class="fa fa-minus-square" id="icon{!! $i !!}"></i> {!! $technique->title !!}</h6>
+                                          <div class="content showing" id="{!! $i !!}">
                                     @else
-                                          <h6 class="techniqe-title"><i class="fa fa-minus-square"></i> {!! $technique->title !!}</h6>
-                                          <div class="content hidden">
+                                          <h6 class="techniqe-title" onclick="collapseExpand('{!! $i !!}','icon{!! $i !!}')"><i class="fa fa-plus-square" id="icon{!! $i !!}"></i> {!! $technique->title !!}</h6>
+                                          <div class="content hidden" id="{!! $i !!}">
                                     @endif
                                     
                                           <h6>¿Qué es?</h6>

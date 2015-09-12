@@ -5,15 +5,16 @@ $('.tooltip').tooltipster();
 });
 
 
-function collapseExpand(idName){
+function collapseExpand(idName, icon){
 	var element = document.getElementById(idName);
+	var icon = document.getElementById(icon);
 
 	if ($('#'+idName).hasClass('hidden')) {
-		element.className = "showing";
-		console.log("TapValue: %@", tap);
+		element.className = "content showing";
+		icon.className = "fa fa-minus-square"
 	}
 	else {
-		element.className = "hidden";
-		console.log("TapValue: %@", tap);
+		element.className = "content hidden";
+		icon.className = "fa fa-plus-square";
 	}
 }
