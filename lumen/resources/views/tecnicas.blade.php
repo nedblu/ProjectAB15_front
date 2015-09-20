@@ -1,7 +1,5 @@
 @extends('templates.main')
-      @section('customStyles')
-            {!! Html::style('css/tecnicas.css') !!}
-      @endsection
+
       @section('content')
             @include('default.header')
             @include('default.title')

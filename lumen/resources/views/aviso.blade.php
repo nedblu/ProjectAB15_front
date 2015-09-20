@@ -1,7 +1,4 @@
 @extends('templates.main')
-		@section('customStyles')
-			
-		@endsection
         @section('content')
             @include('default.header')
             @include('default.title')

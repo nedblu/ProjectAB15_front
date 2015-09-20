@@ -159,6 +159,17 @@ img{vertical-align:middle}
     color: #000;
     padding: 0.2em 0;
 }
+.section-text-not-found {
+    margin-top: 70px;
+    text-align: center;
+}
+.section-text-not-found h3 {
+    font-weight: bold;
+    font-size: 4em;
+    color:#2E85D2;
+    font-family: 'Raleway', sans-serif;
+}
+
 .flex-caption {
     width: 96%;
     padding: 2%;
@@ -179,8 +190,12 @@ img{vertical-align:middle}
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     background-color: #0775bd;
-    height: 175px;
+    min-height: 175px;
 }
 
 #menu ul{
@@ -204,17 +219,17 @@ img{vertical-align:middle}
     font-size: 1em;
     padding: 10px;
     width: 110px;
-    display: block;
     transition: 0.2s all;
+}
+#menu ul li a span.it-text,#menu ul li a i{
+    display: block;
 }
 #menu ul li a:hover{
     background-color: rgba(60,188,231,.8);
     border-radius: 6px;
-    font-size: 1.1em;
     text-shadow: 0px 0px 7px rgba(0,0,0,.5);
 }
 #menu ul li a i{
-    display: block;
     font-size: 1.8em;
     margin-bottom: 8px;
     width: 100%;
@@ -224,6 +239,7 @@ img{vertical-align:middle}
     position: fixed;
     top: 18px;
     left: 40px;
+    z-index: 1000;
     list-style: none;
     border-radius: 100px;
     background: rgba(255,255,255,.4);
@@ -250,8 +266,9 @@ img{vertical-align:middle}
     text-shadow: 2px 2px 1px #C41212;
 }
 
-#pintura{
+#pintura {
     height: 200px;
+    max-width: 100%;
     background: url(../img/bannersplash.png) center no-repeat;
     margin-top: 0px;
 }

@@ -1,7 +1,4 @@
 @extends('templates.main')
-	@section('customStyles')
-		{!! Html::style('css/catalogo.css') !!}
-	@endsection
 
         @section('content')
                 @include('default.header')
@@ -24,19 +21,23 @@
 
                         @foreach ($products as $product)
                                 
-                            <div class="product-card">
-                                <a class="product-card-clic" href="{!! route('producto', ['item' => $product->id, 'title' => $title]) !!}" title="{{ $product->name }}">
+                            <div class="product-card four columns">
+
+                                <a class="product-card-clic" href="{!! route('producto', ['parent' => str_slug($title),'category' => str_slug($product->parent_id), 'item' => $product->id]) !!}" title="{{ $product->name }}">
+
                                     <div class="product-card-image six columns">
                                         @if ($product->image == 'na.png')
-                                            {!! Html::image('http://placehold.it/150x150/A0D2F2/2980b9/?text=150x150') !!}
+                                            {!! Html::image('http://placehold.it/150x150/A0D2F2/2980b9/?text=150x150',$product->name,['class' => 'img-responsive']) !!}
                                         @else
-                                            {!! Html::image('img/'.$productxs->image,'image',['class' => 'mainImage']) !!} 
+                                            {!! Html::image('img/'.$products->image, $product->name,['class' => 'img-responsive']) !!} 
                                         @endif
                                     </div>
+
                                     <div class="product-card-info six columns">
                                         <h5>{{ $product->name }}</h5>
                                         <p>{!! $product->parent_id !!}</p>
                                     </div>
+
                                     <div class="clearfix"></div>
                                 </a>
                             </div>

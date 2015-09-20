@@ -1,7 +1,4 @@
 @extends('templates.main')
-		@section('customStyles')
-			{!! Html::style('css/contacto.css') !!}
-		@endsection
 		@section('customScript')
 			{!! HTML::script('js/function.js'); !!}
 		@endsection

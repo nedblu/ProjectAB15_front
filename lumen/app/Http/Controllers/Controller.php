@@ -11,14 +11,16 @@ class Controller extends BaseController
     *
     * @return array
     */
-    public function _getSlider(){
+    public function _getSlider()
+    {
 
     	$slides = DB::table('banners')->select('id','title','image','uri')->where('published',1)->get();
 
     	return $slides;
     }
 
-    public function getColorsOfProduct( $_array ){
+    public function getColorsOfProduct( $_array )
+    {
 
       if( !is_array ( $_array ))
           $_array = explode(",", $_array);
@@ -57,6 +59,7 @@ class Controller extends BaseController
       }
 
     }
+
 }
 
                                     

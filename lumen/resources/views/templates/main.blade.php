@@ -8,7 +8,7 @@
         @else
             <title>AlphaBeta | {{ ( isset($title) ) ? $title : false }}</title>
         @endif
-        <meta name="description" content="">
+        <meta name="description" content="Grupo Alpha Beta es una compañía con más de 20 años de experiencia que inicio con la distribución autorizada de los productos Epson y con el objetivo de brindarles a los clientes la mejor calidad y el mejor servicio.">
         <meta name="author" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {!! Html::style('//fonts.googleapis.com/css?family=Raleway:400,300,600|Allura|Muli:400,300italic,300,400italic') !!}
@@ -16,13 +16,18 @@
         {!! Html::style('css/normalize.css') !!}
         {!! Html::style('css/skeleton.css') !!}
         {!! Html::style('css/font-awesome.css') !!}
-        {!! Html::style('css/main.css') !!}
-        {!! Html::style('css/buttons.css') !!}
-        {!! Html::style('css/breadcrumbs.css') !!}
+        {!! Html::style('css/app.css') !!}
         {!! Html::style('css/tooltipster.css') !!}
         {!! Html::style('js/vendor/flexslider/flexslider.css') !!}
         {!! Html::script('js/vendor/modernizr-2.8.3.min.js'); !!}
-        @yield('customStyles')
+
+        @if (Session::has('title'))
+            <meta property="og:title" content="{{ Session::get('title') }}"/>
+        @else
+            <meta property="og:title" content="{{ ( isset($title) ) ? $title : false }}"/>
+        @endif
+        <meta property="og:description" content="Grupo Alpha Beta es una compañía con más de 20 años de experiencia que inicio con la distribución autorizada de los productos Epson y con el objetivo de brindarles a los clientes la mejor calidad y el mejor servicio."/>
+        <meta property="og:type" content="article"/>
         
     </head>
     <body>
