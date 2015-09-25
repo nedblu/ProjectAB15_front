@@ -31,7 +31,7 @@
                                         <div class="product-card four columns">
                                             <a class="product-card-clic" href="{{ route('productos', ['category' => $category->id]) }}" title="{{ $category->name }}">
                                                 <div class="product-card-image six columns">
-                                                    @if ($category->image == 'na.png')
+                                                    @if ($category->image == 'no.png')
                                                         {!! Html::image('http://placehold.it/150x150/A0D2F2/2980b9/?text=150x150',$category->name,['class' => 'img-responsive']) !!}
                                                     @else
                                                         {!! Html::image('img/'.$category->image,$category->name,['class' => 'img-responsive']) !!}

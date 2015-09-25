@@ -17,7 +17,7 @@
                     <section class="twelve columns row" id="producto">
 
                             <div class="five columns">
-                                @if ($product[0]->image == 'na.png')
+                                @if ($product[0]->image == 'no.png')
                                     {!! Html::image('http://placehold.it/350x300/A0D2F2/2980b9/?text=350x300', $title, ['class' => 'img-responsive img-thumbnail']) !!}
                                 @else
                                     {!! Html::image('img/'.$product[0]->image, $title, ['class' => 'img-responsive img-thumbnail']) !!} 

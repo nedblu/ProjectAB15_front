@@ -18,15 +18,14 @@
                     <section class="twelve columns row" id="catalogo">
                     	
                         <h3>{{ $title }}</h3>
-
+                        
                         @foreach ($products as $product)
-                                
                             <div class="product-card four columns">
 
                                 <a class="product-card-clic" href="{!! route('producto', ['parent' => str_slug($title),'category' => str_slug($product->parent_id), 'item' => $product->id]) !!}" title="{{ $product->name }}">
 
                                     <div class="product-card-image six columns">
-                                        @if ($product->image == 'na.png')
+                                        @if ($product->image == 'no.png')
                                             {!! Html::image('http://placehold.it/150x150/A0D2F2/2980b9/?text=150x150',$product->name,['class' => 'img-responsive']) !!}
                                         @else
                                             {!! Html::image('img/'.$products->image, $product->name,['class' => 'img-responsive']) !!} 
