@@ -12,7 +12,7 @@
 *	@return array
 **/
 function _getSlider(){
-	$slides = DB::table('banners')->select('id','title','image','uri')->where('published',1)->get();
+	$slides = DB::table('banners')->select('id','title','image','uri')->orderBy('order_id')->where('published',1)->get();
 	return $slides;
 }
 /*
