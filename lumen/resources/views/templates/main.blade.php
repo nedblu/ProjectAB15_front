@@ -16,7 +16,7 @@
         {!! Html::style('css/normalize.css') !!}
         {!! Html::style('css/skeleton.css') !!}
         {!! Html::style('css/font-awesome.css') !!}
-        {!! Html::style('css/app.css') !!}
+        {!! Html::style('css/app2.css') !!}
         {!! Html::style('css/tooltipster.css') !!}
         {!! Html::style('js/vendor/flexslider/flexslider.css') !!}
         {!! Html::script('js/vendor/modernizr-2.8.3.min.js'); !!}
