@@ -19,13 +19,17 @@ class QueriesController extends Controller {
         $mainCategories = array();
 
         foreach ($parents as $parent) {
+
             $data = DB::table('categories')->where('parent_id',$parent->id)->get();
 
-            foreach ($data as $dat) {
-                $dat->parent_id = $parent->name; 
-            }
+            if($data) {
 
-            $mainCategories[] = $data;
+                foreach ($data as $dat) {
+                    $dat->parent_id = $parent->name; 
+                }
+
+                $mainCategories[] = $data;
+            }
         }
 
         return view('catalogo.catalogo', ['title' => 'Catalogo', 'mainCategories' => $mainCategories]);
