@@ -40,14 +40,15 @@
                               <div class="five columns">
                                     <h5>Sucursal México DF</h5>
                                     <p>
-                                         <i class="fa fa-building"></i> Av. Universidad #1134-1, Xoco, Del. Benito Juárez,<br>Ciudad de México, Distrito Federal, C.P. 03330. <br><strong><i class="fa fa-phone"></i> Tel. (55) 443 340 65</strong>
+                                         <i class="fa fa-building"></i> Isabel la Católica #546-B, Álamos, Del. Benito Juárez.<br>Ciudad de México, Distrito Federal. <br><strong><i class="fa fa-phone"></i> Tel. (55) 6821 1116</strong><br><strong><i class="fa fa-phone"></i> Tel. (55) 6821 1117</strong>
+
                                     </p>
                                     <p>
-                                          <a href="https://goo.gl/maps/AsxOZ" target="_blank" title="Oficina General Map" class="button"><i class="fa fa-map-marker"></i> Ver en Google Maps</a>
+                                          <a href="https://goo.gl/maps/Z1vQJUL6mHq" target="_blank" title="Oficina General Map" class="button"><i class="fa fa-map-marker"></i> Ver en Google Maps</a>
                                     </p>
                               </div>
                               <div class="seven columns">
-                                    <img src="http://maps.googleapis.com/maps/api/staticmap?center=19.363264,-99.169235&amp;zoom=15&amp;size=1000x300&amp;markers=color:blue%7Clabel:S%7C19.363264,-99.169235&amp;sensor=false" class="img-responsive img-thumbnail">
+                                    <img src="http://maps.googleapis.com/maps/api/staticmap?center=19.4021627,-99.1421467&amp;zoom=15&amp;size=1000x300&amp;markers=color:blue%7Clabel:S%7C19.4021627,-99.1421467&amp;sensor=false" class="img-responsive img-thumbnail">
                               </div>       
                         </article>
                 </section> 
