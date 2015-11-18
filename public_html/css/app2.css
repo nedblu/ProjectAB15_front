@@ -799,31 +799,36 @@ h6{
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
+    .logo-float{
+        position: absolute;
+        border-radius: 100px;
+        width: 153px;
+        height: 150px;
+        text-align: center;
+    }
+
+    .logo-float img {
+        width: 106px;
+        height: auto;
+        text-align: center;
+        margin-top: 23px;
+    }
 
 }
 
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px) {
-
-}
-
-/* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {
-
-}
-
-/* Extra Small Devices, Phones */ 
-@media only screen and (max-width : 480px) {
-
+@media only screen and (max-width : 1000px) {
     #menu ul{
         padding: 0;
         margin: 0;
         margin-top: 150px;
     }
+    
     #menu ul li {
         display: block;
         width: 100%;
     }
+
     #menu ul li a{
         text-align: left;
         font-size: .8em;
@@ -834,6 +839,54 @@ h6{
     #menu ul li a span.it-text, #menu ul li a i{
         display: inline;
     }
+
+    #menu ul li a i {
+        margin-right: 10px;
+    }
+
+    .logo-float{
+        position: relative;
+        top: 50%;
+        left: 45%;
+        border-radius: 100px;
+        width: 123px;
+        height: 120px;
+        text-align: center;
+    }
+
+    .logo-float img {
+        width: 76px;
+        height: auto;
+        text-align: center;
+        margin-top: 23px;
+    }
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    #menu ul{
+        padding: 0;
+        margin: 0;
+        margin-top: 150px;
+    }
+    
+    #menu ul li {
+        display: block;
+        width: 100%;
+    }
+
+    #menu ul li a{
+        text-align: left;
+        font-size: .8em;
+        width: auto;
+        display: block;
+    }
+
+    #menu ul li a span.it-text, #menu ul li a i{
+        display: inline;
+    }
+
     #menu ul li a i {
         margin-right: 10px;
     }
@@ -847,6 +900,7 @@ h6{
         height: 120px;
         text-align: center;
     }
+
     .logo-float img {
         width: 76px;
         height: auto;
@@ -856,8 +910,106 @@ h6{
 
 }
 
-/* Custom, iPhone Retina */ 
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+
+    #menu ul{
+        padding: 0;
+        margin: 0;
+        margin-top: 150px;
+    }
+
+    #menu ul li {
+        display: block;
+        width: 100%;
+    }
+
+    #menu ul li a{
+        text-align: left;
+        font-size: .8em;
+        width: auto;
+        display: block;
+    }
+
+    #menu ul li a span.it-text, #menu ul li a i{
+        display: inline;
+    }
+
+    #menu ul li a i {
+        margin-right: 10px;
+    }
+
+    .logo-float{
+        position: relative;
+        top: 50%;
+        left: 35%;
+        border-radius: 100px;
+        width: 123px;
+        height: 120px;
+        text-align: center;
+    }
+
+    .logo-float img {
+        width: 76px;
+        height: auto;
+        text-align: center;
+        margin-top: 23px;
+    }
+
+    .section-text{
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+    }
+
+/********************************************************************/
+/***************************CATALOGO*********************************/
+/********************************************************************/
+    #catalogo h3, #catalogo h4{
+        text-align: center;
+    }
+
+    #catalogo div.row.twelve.columns.text-left  a{
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        width: 90%;
+    }
+
+    #catalogo div.product-card.four.columns{
+        float:none;
+        width: 100%;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    #catalogo div.product-card.four.columns img{
+        margin: 0 auto;
+    }
+
+    #catalogo div.product-card-info.six.columns h5, p{
+        text-align: center;
+    }
+
+    #producto h4{
+        text-align: center;
+    }
+
+    #producto div.five.columns{
+        float: none;
+        width: 362px;
+        margin: 0 auto;
+    }
+
+     
+}
+
 @media only screen and (max-width : 320px) {
+
+
+/********************************************************************/
+/***************************MAIN*************************************/
+/********************************************************************/
 
     .section-text{
         margin: 0 auto;
@@ -875,6 +1027,43 @@ h6{
         margin-bottom: 20px;
     }
 
+/********************************************************************/
+/***************************CATALOGO*********************************/
+/********************************************************************/
+    #catalogo h3, #catalogo h4{
+        text-align: center;
+    }
+
+    #catalogo div.row.twelve.columns.text-left  a{
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        width: 90%;
+    }
+
+    #catalogo div.product-card.four.columns{
+        float:none;
+        width: 100%;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    #catalogo div.product-card.four.columns img{
+        margin: 0 auto;
+    }
+
+    #catalogo div.product-card-info.six.columns h5, p{
+        text-align: center;
+    }
+
+    #producto h4{
+        text-align: center;
+    }
+
+/********************************************************************/
+/************************TÉCNICAS************************************/
+/********************************************************************/
+
     .technique .content{
         padding-left: 0px;
     }
@@ -882,5 +1071,15 @@ h6{
     .technique p{
         text-align: center;
     }
-}
 
+    /*
+    *   MISSING TO ADD THE STYLES TAHT DAVICHON DID
+    */
+
+/********************************************************************/
+/***************************SUCURSALES*******************************/
+/********************************************************************/
+    #sucursales img{
+        margin: 0 auto;
+    }
+}

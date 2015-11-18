@@ -37,7 +37,7 @@ class QueriesController extends Controller {
 
     /**
     *   Method to get the Items related to the second level root categoty
-    *   @param $categoru_id
+    *   @param $category_id
     *   @return array
     **/
     public function getItems($category_id){

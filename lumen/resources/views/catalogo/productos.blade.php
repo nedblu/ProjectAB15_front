@@ -25,7 +25,7 @@
                                 <a class="product-card-clic" href="{!! route('producto', ['parent' => str_slug($title),'category' => str_slug($product->parent_id), 'item' => $product->id]) !!}" title="{{ $product->name }}">
 
                                     <div class="product-card-image six columns">
-                                        @if ($product->image === null)
+                                        @if ($product->image === null || $product->image === "no.png")
                                             {!! Html::image('http://placehold.it/150x150/A0D2F2/2980b9/?text=150x150',$product->name,['class' => 'img-responsive']) !!}
                                         @else
                                             {!! Html::image('content/category-images/'.$product->image, $product->name,['class' => 'img-responsive']) !!} 
