@@ -32,7 +32,7 @@
                                         
                                     </p>
                                     <p>
-                                        <strong>DESCRIPCIÓN DETALLADA: </strong><br><span>{!! $product[0]->description_id !!}</span>
+                                        <strong>DESCRIPCIÓN DETALLADA: </strong><br><span>{!! $product[0]->description !!}</span>
                                     </p>
 
                                     @if ($product[0]->ink)

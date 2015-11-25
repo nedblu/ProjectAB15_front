@@ -93,8 +93,8 @@ class QueriesController extends Controller {
 
         if($slug_validation > 0)
         {
-            $description = DB::table('descriptions')->where('id', $product[0]->description_id)->get();
-            $product[0]->description_id = $description[0]->body;
+            // $description = DB::table('descriptions')->where('id', $product[0]->description_id)->get();
+            // $product[0]->description_id = $description[0]->body;
 
             $parentName = DB::table('categories')->where('id', $product[0]->parent_id)->get();
             $product[0]->parent_id = $parentName[0]->name;
