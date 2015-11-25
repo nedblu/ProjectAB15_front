@@ -762,8 +762,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
     margin-top: 100px;
 }
 
-h6{
-    font-size: 1.4em;
+.content h1, h2, h3, h4, h5, h6{
+    color: #222222;
+    font-weight: 300 !important;
 }
 
 .techniqe-title{
@@ -779,13 +780,67 @@ h6{
     margin-bottom: 30px;
 }
 
-.technique p{
-    margin-bottom: 30px;
-    margin-top: -20px;
-}
-
 .content{
     padding-left: 20px;
+}
+
+.content .subHeader{
+    margin-bottom: -5px;
+}
+
+.content img{
+    width: 150px;
+    height: auto;
+    margin-right: 2%;
+    display: inline-block;
+    vertical-align: top;
+}
+.content p{
+    margin-bottom: 30px !important;
+    margin-top: -20px;
+    color: #222222 !important;
+}
+
+.content .about{
+    width: 70%;
+    font-size: 1.5em;
+    font-weight: 300;
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.content h1{
+    font-size: 2.5em !important;
+}
+
+.content h2{
+    font-size: 2em !important;
+}
+
+.content h3{
+    font-size: 1.7em !important;
+}
+
+.content h4{
+    font-size: 1.4em !important;
+}
+
+.content h5{
+    font-size: 1.2em !important;
+}
+
+.content h5{
+    font-size: 1.1em !important;
+}
+
+.content h6{
+    font-size: 1.0em !important;
+}
+
+.content a{
+    text-decoration: none;
+    color: #2E85D2;
 }
 
 /********************************************************************/
@@ -1001,6 +1056,29 @@ h6{
         margin: 0 auto;
     }
 
+/********************************************************************/
+/***************************TECHNIQUES*********************************/
+/********************************************************************/
+
+    .content img{
+        display: none;
+    }
+    .content p{
+        margin-bottom: 30px !important;
+        margin: 0 auto;
+        margin-top: -20px;
+        color: #222222 !important;
+    }
+
+    .content .about{
+        width: 100%;
+        font-size: 1.5em;
+        font-weight: 300;
+        margin: 0 auto;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+
      
 }
 
@@ -1070,6 +1148,25 @@ h6{
 
     .technique p{
         text-align: center;
+    }
+
+    .content img{
+        display: none;
+    }
+    .content p{
+        margin-bottom: 30px !important;
+        margin: 0 auto;
+        margin-top: -20px;
+        color: #222222 !important;
+    }
+
+    .content .about{
+        width: 100%;
+        font-size: 1.5em;
+        font-weight: 300;
+        margin: 0 auto;
+        display: inline-block;
+        vertical-align: bottom;
     }
 
     /*

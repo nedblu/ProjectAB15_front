@@ -14,31 +14,38 @@
                         @foreach ($techniques as $technique)
                               <div class="technique">
                                     @if (--$i == count($techniques)-1)
-                                          <h6 class="techniqe-title" onclick="collapseExpand('{!! $i !!}','icon{!! $i !!}')"><i class="fa fa-minus-square" id="icon{!! $i !!}"></i> {!! $technique->title !!}</h6>
+                                          <h4 class="techniqe-title" onclick="collapseExpand('{!! $i !!}','icon{!! $i !!}')"><i class="fa fa-minus-square" id="icon{!! $i !!}"></i> {!! $technique->title !!}</h4>
                                           <div class="content showing" id="{!! $i !!}">
                                     @else
-                                          <h6 class="techniqe-title" onclick="collapseExpand('{!! $i !!}','icon{!! $i !!}')"><i class="fa fa-plus-square" id="icon{!! $i !!}"></i> {!! $technique->title !!}</h6>
+                                          <h4 class="techniqe-title" onclick="collapseExpand('{!! $i !!}','icon{!! $i !!}')"><i class="fa fa-plus-square" id="icon{!! $i !!}"></i> {!! $technique->title !!}</h4>
                                           <div class="content hidden" id="{!! $i !!}">
                                     @endif
-                                    
-                                          <h6>¿Qué es?</h6>
-                                          <p>
-                                                {!! $technique->about !!}
-                                          </p>
-                                          <h6>¿Dónde lo aplico?</h6>
-                                          <p>
+                                          @if ($technique->image != null)
+                                                <div class="subHeader"> 
+                                                      {!! Html::image('content/technique/' . $technique->image, $technique->title,['class' => 'img-responsive']) !!}<p class="about">{!! $technique->about !!}</p> 
+                                                </div>
+                                                <hr>
+                                                <br/>
+                                                <br/>
                                                 {!! $technique->detail !!}
-                                          </p>
-                                          <h6>¿Qué se necesita?</h6>
-                                          <p>
+                                          @else
+                                                 <div class="subHeader"> 
+                                                      {!! Html::image('http://placehold.it/150x150/F3F3F3/F3F3F3/?text=150x150',$technique->title,['class' => 'img-responsive']) !!}
+                                                     <p class="about">{!! $technique->about !!}</p> 
+                                                </div>
+                                                <hr>
+                                                <br/>
+                                                <br/>
                                                 {!! $technique->detail !!}
-                                          </p>
+                                          @endif
+                                                
+                                         
                                     </div>
                               </div>
                         @endforeach
                   </div>
             </div>
-            
+
             @include('default.footer')
             @endsection
 
