@@ -28,7 +28,7 @@
                                         @if ($product->image === null)
                                             {!! Html::image('http://placehold.it/150x150/A0D2F2/2980b9/?text=150x150',$product->name,['class' => 'img-responsive']) !!}
                                         @else
-                                            {!! Html::image('content/category-images/'.$product->image, $product->name,['class' => 'img-responsive']) !!} 
+                                            {!! Html::image('content/products/'.$product->image, $product->name,['class' => 'img-responsive']) !!} 
                                         @endif
                                     </div>
 
