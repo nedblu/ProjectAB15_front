@@ -22,7 +22,7 @@
                                     @endif
                                           @if ($technique->image != null)
                                                 <div class="subHeader"> 
-                                                      {!! Html::image('content/technique/' . $technique->image, $technique->title,['class' => 'img-responsive']) !!}<p class="about">{!! $technique->about !!}</p> 
+                                                      {!! Html::image('content/techniques/' . $technique->image, $technique->title,['class' => 'img-responsive']) !!}<p class="about">{!! $technique->about !!}</p> 
                                                 </div>
                                                 <hr>
                                                 <br/>
