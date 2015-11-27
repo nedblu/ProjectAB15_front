@@ -6,21 +6,13 @@
                 @include('default.title')
                 <div class="container">
 
-                    <!--<section class="twelve columns row" id="breadcrumb">
-                        <ul class="breadcrumb">
-                            <li><a href="{!! route('reqCatalogo') !!}" title="Catálogo" >Catálogo</a></li>
-                            <li><a href="{!! route('productos') !!}" title="Catálogo" >Catálogo</a></li>
-                            <li class="active">{{ $title }}</li>
-                        </ul>
-                    </section>-->
-
                     <section class="twelve columns row" id="producto">
 
                             <div class="five columns">
                                 @if ($product[0]->image === null)
                                     {!! Html::image('http://placehold.it/350x300/A0D2F2/2980b9/?text=350x300', $title, ['class' => 'img-responsive img-thumbnail']) !!}
                                 @else
-                                    {!! Html::image('content/category-images/'.$product[0]->image, $title, ['class' => 'img-responsive img-thumbnail']) !!} 
+                                    {!! Html::image('content/products/'.$product[0]->image, $title, ['class' => 'img-responsive img-thumbnail']) !!} 
                                 @endif
                             </div>
 
