@@ -19,42 +19,34 @@ class Controller extends BaseController
     	return $slides;
     }
 
-    public function getColorsOfProduct( $_array )
+    public function getColorsOfProduct($item)
     {
 
-      if( !is_array ( $_array ))
-          $_array = explode(",", $_array);
+      if (! is_array ($item))
+          $item = explode(",", $item);
 
-      if( count($_array) > 1) {
+      if (count($item) > 1) {
 
           $count = 0;
+          $colors = DB::table('colors')->select('name', 'image')->where('code', strtoupper ($item[0]));
 
-          $colors = DB::table( 'colors' )->select('name','image')->where( 'code', strtoupper ( $_array[0] ) );
+          foreach ($item as $item){
 
-          foreach($_array as $item){
-
-              if($count > 0){
-
-                  $colors_union = DB::table( 'colors' )->select('name','image')->where( 'code', strtoupper ( $item ) );
-
-                  $colors = $colors->unionAll( $colors_union );
-
+              if ($count > 0) {
+                  $colors_union = DB::table('colors')->select('name', 'image')->where('code', strtoupper ($item));
+                  $colors = $colors->unionAll($colors_union);
               }
-
               $count++;
 
           }
 
           $results = $colors->orderBy('name', 'asc')->get();
-
           return $results;
 
       }
 
       else {
-
-          $results = DB::table( 'colors' )->select('name','image')->where( 'code', $_array )->get();
-
+          $results = DB::table('colors')->select('name', 'image')->where('code', $item)->get();
           return $results;
       }
 
