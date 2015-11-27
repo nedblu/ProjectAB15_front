@@ -54,9 +54,6 @@ class QueriesController extends Controller {
             );
             /********** BREADCRUMBS -END- ***********/
 
-            //$this->getBreadcrumbs($category_id);
-
-
             $products = DB::table('products')->where('category_id',$category_id)->get();
 
             $title = DB::table('categories')->where('id',$category_id)->get();
@@ -93,8 +90,6 @@ class QueriesController extends Controller {
 
         if($slug_validation > 0)
         {
-            // $description = DB::table('descriptions')->where('id', $product[0]->description_id)->get();
-            // $product[0]->description_id = $description[0]->body;
 
             $parentName = DB::table('categories')->where('id', $product[0]->parent_id)->get();
             $product[0]->parent_id = $parentName[0]->name;
