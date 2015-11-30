@@ -15,7 +15,7 @@
         {!! Html::favicon('img/ABfavicon.png') !!}
         {!! Html::style('css/normalize.css') !!}
         {!! Html::style('css/skeleton.css') !!}
-        {!! Html::style('css/font-awesome.css') !!}
+        {!! Html::style('css/font-awesome.min.css') !!}
         {!! Html::style('css/app.css') !!}
         {!! Html::style('css/tooltipster.css') !!}
         {!! Html::style('js/vendor/flexslider/flexslider.css') !!}
@@ -39,7 +39,6 @@
     </body>
     {!! Html::script('js/vendor/jquery-1.11.3.min.js') !!}
     {!! Html::script('js/vendor/flexslider/jquery.flexslider-min.js'); !!}
-    {!! Html::script('http://imsky.github.io/holder/holder.js'); !!}
     {!! Html::script('js/vendor/jquery.tooltipster.min.js'); !!}
     {!! Html::script('js/plugins.js'); !!}
     {!! Html::script('js/main.js'); !!}

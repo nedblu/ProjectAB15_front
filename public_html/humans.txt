@@ -3,11 +3,8 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
-
-# THANKS
-
-    <name>
+    Carlos David Aguilar Ruiz -- Software Engineer -- @carlosdavar
+    Felipe Perez Camargo -- Software Engineer -- @perezcamargo
 
 # TECHNOLOGY COLOPHON
 
