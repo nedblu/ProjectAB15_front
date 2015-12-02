@@ -44,7 +44,7 @@ $app->get('/catalogo', ['as' => 'reqCatalogo', 'uses' => 'QueriesController@getC
 
 $app->get('/catalogo/{category:[1-9]+}', ['as' => 'productos', 'uses' => 'QueriesController@getItems']);
 
-$app->get('/catalogo/{parent:[A-Za-z -]+}/{category:[A-Za-z -]+}/{item:[1-9]+}', ['as' => 'producto', 'uses' => 'QueriesController@getItem']);
+$app->get('/catalogo/{parent:[A-Za-z -]+}/{category:[A-Za-z -]+}/{item:[0-9]+}', ['as' => 'producto', 'uses' => 'QueriesController@getItem']);
 
 /******************TECNICAS SECTION******************/
 // $app->get('/tecnicas', ['as' => 'tecnicas', function () {
