@@ -42,9 +42,9 @@ $app->get('/acerca', ['as' => 'acerca', function () {
 /******************CATALOGO SECTION******************/
 $app->get('/catalogo', ['as' => 'reqCatalogo', 'uses' => 'QueriesController@getCatalogo']);
 
-$app->get('/catalogo/{category:[1-9]+}', ['as' => 'productos', 'uses' => 'QueriesController@getItems']);
+$app->get('/catalogo/{category:[0-9]+}', ['as' => 'productos', 'uses' => 'QueriesController@getItems']);
 
-$app->get('/catalogo/{parent:[A-Za-z -]+}/{category:[A-Za-z -]+}/{item:[1-9]+}', ['as' => 'producto', 'uses' => 'QueriesController@getItem']);
+$app->get('/catalogo/{parent:[A-Za-z0-9 -]+}/{category:[A-Za-z0-9 -]+}/{item:[0-9]+}', ['as' => 'producto', 'uses' => 'QueriesController@getItem']);
 
 /******************TECNICAS SECTION******************/
 // $app->get('/tecnicas', ['as' => 'tecnicas', function () {
