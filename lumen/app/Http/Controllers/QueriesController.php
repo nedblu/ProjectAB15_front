@@ -85,9 +85,11 @@ class QueriesController extends Controller {
     public function getItem($parent_slug, $category_slug, $product_id) {
 
         $product = DB::table('products')->where('id', $product_id)->get();
-
-        $slug_validation = DB::table('categories')->where('id',$product[0]->parent_id)->where('slug',$category_slug)->count();
-
+        $mainCategory = DB::table('categories')->where('id', $product[0]->category_id)->get();
+        $rootCategory = DB::table('categories')->where('id',$mainCategory[0]->parent_id)->get();
+        
+        $slug_validation = DB::table('categories')->where('id',$product[0]->parent_id)->where('slug',$category_slug)->count(); 
+        
         if($slug_validation > 0)
         {
 
@@ -109,10 +111,15 @@ class QueriesController extends Controller {
                 $product[0]->equipment = $equipment[0]->equip_ar;
             }
 
+            $breadcrumb = array(
+                0=> array('name' => $rootCategory[0]->name, 'link' => route('reqCatalogo').'#'.$rootCategory[0]->name),
+                1=> array('name' => $parentName[0]->name, 'link' => route('productos', ['category' => $mainCategory[0]->id])));
+
+
             if ($product[0]->colors) {
-                return view('catalogo.item', ['title' => $product[0]->name, 'product' => $product, 'colors' => $colors]);
+                return view('catalogo.item', ['title' => $product[0]->name, 'product' => $product, 'colors' => $colors, 'breadcrumb' => $breadcrumb]);
             }else{
-                return view('catalogo.item', ['title' => $product[0]->name, 'product' => $product]);
+                return view('catalogo.item', ['title' => $product[0]->name, 'product' => $product, 'breadcrumb' => $breadcrumb]);
             }
 
         }

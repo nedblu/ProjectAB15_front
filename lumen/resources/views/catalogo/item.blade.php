@@ -6,13 +6,14 @@
                 @include('default.title')
                 <div class="container">
 
-                    <!--<section class="twelve columns row" id="breadcrumb">
+                    <section class="twelve columns row" id="breadcrumb">
                         <ul class="breadcrumb">
                             <li><a href="{!! route('reqCatalogo') !!}" title="Catálogo" >Catálogo</a></li>
-                            <li><a href="{!! route('productos') !!}" title="Catálogo" >Catálogo</a></li>
+                            <li><a href="{{ $breadcrumb[0]['link'] }}" title="{{ $breadcrumb[0]['name'] }}" >{{ $breadcrumb[0]['name'] }}</a></li>
+                            <li><a href="{{ $breadcrumb[1]['link'] }}" title="{{ $breadcrumb[1]['name'] }}" >{{ $breadcrumb[1]['name'] }}</a></li>
                             <li class="active">{{ $title }}</li>
                         </ul>
-                    </section>-->
+                    </section>
 
                     <section class="twelve columns row" id="producto">
 
